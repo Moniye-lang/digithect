@@ -1,0 +1,1887 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DIGITHECT | Elite Software Architecture & Engineering Services</title>
+  <meta name="description" content="Digithect designs and constructs sovereign enterprise systems, mission-critical cloud architectures, bespoke private AI platforms, and ultra-high performance distributed digital infrastructure.">
+  <link rel="icon" type="image/jpeg" href="/assets/digithect-logo-hseU6PyU.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, Cinzel, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              50: '#FDFBF7',
+              100: '#F9F4E6',
+              200: '#F2E4BF',
+              300: '#E8D092',
+              400: '#DFBD67',
+              500: '#D4A737', // Digithect Signature Gold
+              600: '#B8861E',
+              700: '#8E6314',
+              800: '#64430F',
+              900: '#3D280A',
+            },
+            obsidian: {
+              950: '#040507',
+              900: '#07090E',
+              850: '#0C0F17',
+              800: '#111520',
+              750: '#171D2B',
+              700: '#1E2536',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Gold Gradients & Glows */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF6D6 0%, #E6C875 35%, #C9972C 70%, #F5E09C 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .border-gold-glow {
+      border: 1px solid rgba(212, 167, 55, 0.25);
+      box-shadow: 0 0 25px -5px rgba(212, 167, 55, 0.15), inset 0 0 15px -5px rgba(212, 167, 55, 0.05);
+    }
+
+    .border-gold-glow-hover:hover {
+      border-color: rgba(212, 167, 55, 0.6);
+      box-shadow: 0 0 35px -5px rgba(212, 167, 55, 0.3), inset 0 0 20px -5px rgba(212, 167, 55, 0.1);
+    }
+
+    /* Architectural Background Grids */
+    .architect-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(212, 167, 55, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(212, 167, 55, 0.05) 1px, transparent 1px);
+    }
+
+    .blueprint-grid {
+      background-size: 20px 20px;
+      background-image: 
+        linear-gradient(to right, rgba(212, 167, 55, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(212, 167, 55, 0.08) 1px, transparent 1px);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #040507;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1c2230;
+      border-radius: 4px;
+      border: 1px solid rgba(212, 167, 55, 0.2);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4A737;
+    }
+
+    /* SVG Building Rise Animations */
+    .tower-rise-1 {
+      transform-origin: 153px 340px;
+      transform: scaleY(0);
+      transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tower-rise-2 {
+      transform-origin: 185px 340px;
+      transform: scaleY(0);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .tower-rise-3 {
+      transform-origin: 219px 340px;
+      transform: scaleY(0);
+      transition: transform 1.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .d-arc-path {
+      stroke-dasharray: 800;
+      stroke-dashoffset: 800;
+      opacity: 0;
+      transition: stroke-dashoffset 1.5s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.8s ease;
+    }
+    .brand-wordmark {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    /* Active Animation States */
+    .animated .tower-rise-1 {
+      transform: scaleY(1);
+    }
+    .animated .tower-rise-2 {
+      transform: scaleY(1);
+      transition-delay: 0.7s;
+    }
+    .animated .tower-rise-3 {
+      transform: scaleY(1);
+      transition-delay: 1.3s;
+    }
+    .animated .d-arc-path {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      transition-delay: 2.1s;
+    }
+    .animated .brand-wordmark {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 3.0s;
+    }
+
+    /* Laser Scanner Beam Keyframes */
+    @keyframes scanBeam1 {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(-85px); opacity: 0; }
+    }
+    @keyframes scanBeam2 {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(-140px); opacity: 0; }
+    }
+    @keyframes scanBeam3 {
+      0% { transform: translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { transform: translateY(-198px); opacity: 0; }
+    }
+
+    .animated #beam-1 {
+      animation: scanBeam1 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .animated #beam-2 {
+      animation: scanBeam2 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
+    }
+    .animated #beam-3 {
+      animation: scanBeam3 1.3s cubic-bezier(0.16, 1, 0.3, 1) 1.3s forwards;
+    }
+
+    /* Shimmer light sweep across logo */
+    @keyframes goldShimmerSweep {
+      0% { transform: translateX(-150%) rotate(25deg); opacity: 0; }
+      50% { opacity: 0.4; }
+      100% { transform: translateX(250%) rotate(25deg); opacity: 0; }
+    }
+    .shimmer-sweep {
+      animation: goldShimmerSweep 5s infinite 4s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-[#050608] text-slate-100 antialiased selection:bg-gold-500/30 selection:text-gold-200 overflow-x-hidden min-h-screen font-sans">
+
+  <!-- ========================================================= -->
+  <!-- NAVIGATION BAR -->
+  <!-- ========================================================= -->
+  <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-[#05070c]/85 backdrop-blur-xl border-b border-gold-500/20 shadow-xl shadow-black/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Brand Wordmark & Icon -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center overflow-hidden group-hover:border-gold-400 transition-colors shadow-lg shadow-gold-500/10">
+            <svg viewBox="0 0 100 100" class="w-8 h-8">
+              <polygon points="28,80 28,62 36,54 36,80" fill="#E6C875" />
+              <polygon points="40,80 40,46 48,38 48,80" fill="#DFBD67" />
+              <path d="M 52 80 L 52 35 L 45 31 L 49 24 L 60 18 L 60 80 Z" fill="#F3E5AB" />
+              <path d="M 60 14 C 80 26, 92 42, 86 58 C 82 69, 72 78, 60 78 C 66 73, 72 65, 74 54 C 76 43, 70 32, 60 26 Z" fill="#D4A737" />
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center tracking-[0.24em] text-base font-bold font-display text-white group-hover:text-gold-200 transition-colors">
+              DIGITH<span class="text-gold-400">E</span>CT
+            </div>
+            <span class="text-[9px] tracking-[0.38em] text-gold-400/80 font-mono -mt-0.5">
+              SOFTWARE SERVICES
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#services" class="text-sm font-medium text-slate-300 hover:text-gold-300 transition-colors relative py-1 group">
+            Disciplines
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-amber-200 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="#configurator" class="text-sm font-medium text-slate-300 hover:text-gold-300 transition-colors relative py-1 group">
+            Blueprint Designer
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-amber-200 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="#process" class="text-sm font-medium text-slate-300 hover:text-gold-300 transition-colors relative py-1 group">
+            Methodology
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-amber-200 group-hover:w-full transition-all duration-300"></span>
+          </a>
+          <a href="#tech-stack" class="text-sm font-medium text-slate-300 hover:text-gold-300 transition-colors relative py-1 group">
+            Tech Matrix
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-gold-400 to-amber-200 group-hover:w-full transition-all duration-300"></span>
+          </a>
+        </nav>
+
+        <!-- CTA & Status Indicator -->
+        <div class="hidden lg:flex items-center gap-4">
+          <div class="flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[11px] font-mono text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>SLA 99.999% VERIFIED</span>
+          </div>
+
+          <button onclick="openModal()" class="relative group overflow-hidden px-5 py-2.5 rounded-xl font-medium text-sm text-black bg-gradient-to-r from-[#FFF0B8] via-[#E2BB58] to-[#BD8B1D] hover:brightness-110 shadow-lg shadow-gold-500/20 transition-all duration-200 active:scale-95">
+            <span class="relative z-10 flex items-center gap-1.5 font-bold tracking-wide">
+              Engage Digithect
+              <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            </span>
+            <div class="absolute inset-0 bg-white/40 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white" aria-label="Toggle menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#07090e] border-b border-gold-500/20 px-6 py-6 mt-3 space-y-4">
+      <a href="#services" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-200 hover:text-gold-300 py-1">Disciplines</a>
+      <a href="#configurator" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-200 hover:text-gold-300 py-1">Blueprint Designer</a>
+      <a href="#process" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-200 hover:text-gold-300 py-1">Methodology</a>
+      <a href="#tech-stack" onclick="toggleMobileMenu()" class="block text-base font-medium text-slate-200 hover:text-gold-300 py-1">Tech Matrix</a>
+      <div class="pt-4 border-t border-slate-800">
+        <button onclick="toggleMobileMenu(); openModal();" class="w-full py-3 rounded-xl font-bold text-sm text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 shadow-lg">
+          Engage Digithect
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- HERO SECTION WITH PREMIUM BUILDING RISE ANIMATION -->
+  <!-- ========================================================= -->
+  <section class="relative min-h-screen pt-32 pb-20 flex flex-col justify-center overflow-hidden">
+    <!-- Background Grid & Glows -->
+    <div class="absolute inset-0 architect-grid pointer-events-none opacity-40"></div>
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-b from-gold-500/10 via-amber-600/5 to-transparent blur-[140px] pointer-events-none"></div>
+    <div class="absolute top-1/3 -left-48 w-96 h-96 bg-gold-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-48 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <!-- HUD Telemetry Labels -->
+    <div class="absolute top-36 left-10 hidden xl:block text-[11px] font-mono text-gold-500/40 space-y-1">
+      <div>SYS: DIGITHECT_CORE // ACTIVE</div>
+      <div>TOPOLOGY: 64-BIT MULTI-CLOUD</div>
+      <div>PEAK CAPACITY: 10,000,000 RPS</div>
+    </div>
+
+    <div class="absolute top-36 right-10 hidden xl:block text-[11px] font-mono text-gold-500/40 text-right space-y-1">
+      <div>ZERO-TRUST SEC: ENGAGED</div>
+      <div>LATENCY: 0.74ms GLOBAL P99</div>
+      <div>CRYPTO: POST-QUANTUM HARDENED</div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 my-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column: Value Proposition -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-mono text-gold-300 backdrop-blur-md">
+            <i data-lucide="compass" class="w-3.5 h-3.5 text-gold-400 animate-spin" style="animation-duration: 15s;"></i>
+            <span class="tracking-widest uppercase font-semibold">SOVEREIGN SOFTWARE ARCHITECTURE</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight font-display text-white leading-[1.12]">
+            Architecting the Future of Enterprise Systems with <span class="text-gold-gradient block sm:inline">Monumental Precision.</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Digithect crafts high-throughput distributed systems, mission-critical cloud backbones, and bespoke private AI platforms. We don’t just write code—we construct fault-tolerant digital monuments engineered for exponential scale.
+          </p>
+
+          <!-- Core Feature Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left max-w-xl mx-auto lg:mx-0">
+            <div class="flex items-center gap-2 text-xs text-slate-300">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+              <span>Zero-Downtime SLA</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-300">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+              <span>Private Domain AI</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-300">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+              <span>Bank-Grade Encryption</span>
+            </div>
+          </div>
+
+          <!-- Hero CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <button onclick="openModal()" class="w-full sm:w-auto relative group overflow-hidden px-8 py-4 rounded-xl font-semibold text-black bg-gradient-to-r from-[#FFF0B8] via-[#E2BB58] to-[#BD8B1D] hover:brightness-110 shadow-xl shadow-gold-500/25 transition-all duration-300 active:scale-95">
+              <span class="relative z-10 flex items-center justify-center gap-2 font-bold tracking-wide">
+                Schedule Architectural Audit
+                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+              </span>
+              <div class="absolute inset-0 bg-white/40 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+            </button>
+
+            <a href="#services" class="w-full sm:w-auto px-7 py-4 rounded-xl font-medium text-slate-200 bg-slate-900/80 hover:bg-slate-800/90 border border-gold-500/25 hover:border-gold-400/50 hover:text-gold-200 transition-all duration-300 flex items-center justify-center gap-2">
+              Explore Disciplines Catalog
+            </a>
+          </div>
+
+          <!-- Telemetry Stats Strip -->
+          <div class="pt-6 border-t border-gold-500/10 flex flex-wrap items-center justify-center lg:justify-start gap-8">
+            <div>
+              <div class="text-2xl font-bold font-display text-white">99.999%</div>
+              <div class="text-[11px] font-mono text-gold-400/80 tracking-wider">UPTIME SLA</div>
+            </div>
+            <div class="h-8 w-px bg-slate-800"></div>
+            <div>
+              <div class="text-2xl font-bold font-display text-white">&lt; 0.8ms</div>
+              <div class="text-[11px] font-mono text-gold-400/80 tracking-wider">CORE LATENCY</div>
+            </div>
+            <div class="h-8 w-px bg-slate-800"></div>
+            <div>
+              <div class="text-2xl font-bold font-display text-white">$10B+</div>
+              <div class="text-[11px] font-mono text-gold-400/80 tracking-wider">ANNUAL VOLUME</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: THE ANIMATED DIGITHECT EMBLEM (Building Rise Animation) -->
+        <div class="lg:col-span-5 flex flex-col items-center justify-center">
+          
+          <!-- 3D Card Container -->
+          <div id="emblem-card" class="relative group p-6 sm:p-10 rounded-3xl bg-gradient-to-b from-[#11141c]/90 via-[#0a0d13]/95 to-[#06080c] border border-gold-500/30 shadow-2xl shadow-black/90 backdrop-blur-2xl transition-transform duration-200 ease-out">
+            
+            <!-- Blueprint Grid Overlay -->
+            <div id="blueprint-layer" class="absolute inset-0 rounded-3xl opacity-15 architect-grid pointer-events-none transition-opacity duration-500"></div>
+
+            <!-- Shimmer Light Flare overlay -->
+            <div class="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none">
+              <div class="w-1/2 h-[200%] bg-gradient-to-r from-transparent via-gold-400/10 to-transparent shimmer-sweep"></div>
+            </div>
+
+            <!-- HUD Header Status -->
+            <div class="relative flex items-center justify-between text-[10px] sm:text-xs font-mono text-gold-400/80 border-b border-gold-500/15 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+                <span id="hud-status" class="tracking-widest">PHASE 01 // TOWER RISE ELEVATION</span>
+              </div>
+              <div class="text-slate-500">DGT-ARCH // 24K</div>
+            </div>
+
+            <!-- The SVG Artwork with Building Rise Animation -->
+            <div class="relative pt-4 pb-2 flex items-center justify-center">
+              <svg id="digithect-svg" viewBox="0 0 500 500" class="w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] overflow-visible drop-shadow-[0_15px_35px_rgba(212,167,55,0.25)]">
+                <defs>
+                  <!-- 24K Metallic Gold Gradients -->
+                  <linearGradient id="goldTowerLeft" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#7A530E" />
+                    <stop offset="50%" stop-color="#D9AC3C" />
+                    <stop offset="90%" stop-color="#FFF1B8" />
+                    <stop offset="100%" stop-color="#FFFFFF" />
+                  </linearGradient>
+
+                  <linearGradient id="goldTowerMid" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="#8A600D" />
+                    <stop offset="40%" stop-color="#E2BB58" />
+                    <stop offset="85%" stop-color="#FFF6CD" />
+                    <stop offset="100%" stop-color="#FFE082" />
+                  </linearGradient>
+
+                  <linearGradient id="goldTowerSpire" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#6C4A0A" />
+                    <stop offset="30%" stop-color="#D4A737" />
+                    <stop offset="65%" stop-color="#FFF2C2" />
+                    <stop offset="100%" stop-color="#FFE680" />
+                  </linearGradient>
+
+                  <linearGradient id="goldArcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#FFE8A3" />
+                    <stop offset="20%" stop-color="#F2D075" />
+                    <stop offset="50%" stop-color="#C99726" />
+                    <stop offset="80%" stop-color="#FFE79E" />
+                    <stop offset="100%" stop-color="#7E540C" />
+                  </linearGradient>
+
+                  <linearGradient id="goldWordmark" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#FFEAA7" />
+                    <stop offset="50%" stop-color="#D4A737" />
+                    <stop offset="100%" stop-color="#FAF0BE" />
+                  </linearGradient>
+
+                  <!-- Architectural Glow Filter -->
+                  <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+                    <feGaussianBlur stdDeviation="6" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- Base Foundation Line -->
+                <line x1="80" y1="340" x2="420" y2="340" stroke="#D4A737" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.3"></line>
+
+                <!-- Blueprint Grid Measurements (Hidden by default, shown in Blueprint mode) -->
+                <g id="blueprint-guides" class="hidden" stroke="#DFBD67" stroke-width="0.75" stroke-dasharray="3 3" opacity="0.5">
+                  <line x1="140" y1="300" x2="260" y2="300"></line>
+                  <line x1="140" y1="260" x2="260" y2="260"></line>
+                  <line x1="170" y1="220" x2="260" y2="220"></line>
+                  <line x1="170" y1="180" x2="260" y2="180"></line>
+                  <line x1="210" y1="140" x2="260" y2="140"></line>
+                  <circle cx="270" cy="220" r="120" fill="none"></circle>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 1. TOWER 1 (Leftmost Tower - Lowest Height, Angled Top) -->
+                <!-- Baseline y: 340. Width: ~22px (x: 142 to 164). Height: ~85px (y: 255) -->
+                <!-- ========================================================= -->
+                <g id="tower-1-group">
+                  <g class="tower-rise-1">
+                    <polygon points="142,340 142,275 164,255 164,340" fill="url(#goldTowerLeft)" stroke="#F7D885" stroke-width="1"></polygon>
+                    <!-- Architectural Floor Lines -->
+                    <line x1="143" y1="320" x2="163" y2="320" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="143" y1="300" x2="163" y2="300" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="143" y1="280" x2="163" y2="280" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <!-- Angled Summit Highlight -->
+                    <line x1="142" y1="275" x2="164" y2="255" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"></line>
+                  </g>
+                  <!-- Rising Laser Elevation Beam -->
+                  <line id="beam-1" x1="135" y1="340" x2="171" y2="340" stroke="#FFFFFF" stroke-width="3" opacity="0"></line>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 2. TOWER 2 (Middle Tower - Intermediate Height, Angled Top) -->
+                <!-- Baseline y: 340. Width: ~23px (x: 174 to 197). Height: ~140px (y: 200) -->
+                <!-- ========================================================= -->
+                <g id="tower-2-group">
+                  <g class="tower-rise-2">
+                    <polygon points="174,340 174,222 197,200 197,340" fill="url(#goldTowerMid)" stroke="#F7D885" stroke-width="1"></polygon>
+                    <!-- Floor lines -->
+                    <line x1="175" y1="315" x2="196" y2="315" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="175" y1="290" x2="196" y2="290" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="175" y1="265" x2="196" y2="265" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="175" y1="240" x2="196" y2="240" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <!-- Summit Highlight -->
+                    <line x1="174" y1="222" x2="197" y2="200" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"></line>
+                  </g>
+                  <!-- Rising Laser Beam -->
+                  <line id="beam-2" x1="168" y1="340" x2="203" y2="340" stroke="#FFFFFF" stroke-width="3" opacity="0"></line>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 3. TOWER 3 (Rightmost Master Tower - Skyscraper Spire) -->
+                <!-- Baseline y: 340. Width: ~24px (x: 207 to 231). Height: ~198px (y: 142) -->
+                <!-- Features the signature architectural beak/peak from the Digithect logo -->
+                <!-- ========================================================= -->
+                <g id="tower-3-group">
+                  <g class="tower-rise-3">
+                    <path d="M 207 340 L 207 195 L 186 182 L 196 160 L 231 142 L 231 340 Z" fill="url(#goldTowerSpire)" stroke="#F7D885" stroke-width="1"></path>
+                    <line x1="220" y1="340" x2="220" y2="152" stroke="#FFF2BF" stroke-width="0.8" opacity="0.6"></line>
+                    <line x1="208" y1="315" x2="230" y2="315" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="208" y1="285" x2="230" y2="285" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="208" y1="255" x2="230" y2="255" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="208" y1="225" x2="230" y2="225" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <line x1="208" y1="195" x2="230" y2="195" stroke="#050608" stroke-width="1.2" opacity="0.4"></line>
+                    <polyline points="186,182 196,160 231,142" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></polyline>
+                  </g>
+                  <!-- Rising Laser Beam -->
+                  <line id="beam-3" x1="180" y1="340" x2="238" y2="340" stroke="#FFFFFF" stroke-width="3.5" opacity="0"></line>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 4. THE GRAND GOLDEN D-ARC (The Sweeping Curve of the 'D') -->
+                <!-- Originates at the top of Tower 3, sweeps right, loops down and curves back to baseline -->
+                <!-- ========================================================= -->
+                <g id="d-arc-group">
+                  <path class="d-arc-path" d="M 231 118 L 262 138 C 335 178, 375 220, 360 268 C 346 312, 305 340, 244 340 C 260 330, 275 315, 290 295 C 318 258, 312 215, 262 184 L 231 165 Z" fill="url(#goldArcGrad)" stroke="#FFE8A3" stroke-width="1" filter="url(#goldGlow)"></path>
+                </g>
+
+                <!-- ========================================================= -->
+                <!-- 5. TYPOGRAPHY: DIGITHECT & SOFTWARE SERVICES -->
+                <!-- ========================================================= -->
+                <g class="brand-wordmark">
+                  <!-- DIGITHECT with 3-bar architectural 'E' -->
+                  <text x="75" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">D</text>
+                  <text x="126" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">I</text>
+                  <text x="160" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">G</text>
+                  <text x="215" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">I</text>
+                  <text x="250" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">T</text>
+                  <text x="296" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">H</text>
+
+                  <!-- ARCHITECTURAL 'E' (3 Horizontal Bars) -->
+                  <g id="architectural-e">
+                    <rect x="345" y="388" width="24" height="4.5" rx="1" fill="url(#goldWordmark)"></rect>
+                    <rect x="345" y="401" width="20" height="4.5" rx="1" fill="url(#goldWordmark)"></rect>
+                    <rect x="345" y="414" width="24" height="4.5" rx="1" fill="url(#goldWordmark)"></rect>
+                  </g>
+
+                  <text x="386" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">C</text>
+                  <text x="432" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">T</text>
+
+                  <!-- SUBTITLE: "— SOFTWARE SERVICES —" -->
+                  <line x1="65" y1="452" x2="115" y2="452" stroke="#D4A737" stroke-width="1.2" opacity="0.7"></line>
+                  <text x="250" y="456" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="500" font-size="15" letter-spacing="0.45em" fill="#EAD293">
+                    SOFTWARE SERVICES
+                  </text>
+                  <line x1="385" y1="452" x2="435" y2="452" stroke="#D4A737" stroke-width="1.2" opacity="0.7"></line>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Construction Progress Bar -->
+            <div class="w-full mt-4">
+              <div class="h-1 w-full bg-slate-800/80 rounded-full overflow-hidden">
+                <div id="timeline-bar" class="h-full bg-gradient-to-r from-gold-600 via-gold-400 to-amber-200 w-0 transition-all duration-[3400ms] ease-linear"></div>
+              </div>
+              <div class="flex justify-between items-center text-[10px] font-mono text-slate-400 mt-2">
+                <span>0.0s FOUNDATION</span>
+                <span>0.7s TOWER 1</span>
+                <span>1.3s TOWER 2</span>
+                <span>2.1s SPIRE</span>
+                <span class="text-gold-400">3.4s COMPLETE</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Control Toolbar -->
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-3 text-xs">
+            <!-- Replay Button -->
+            <button onclick="triggerEmblemAnimation()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 hover:border-gold-400 transition-all duration-200 active:scale-95 shadow-lg shadow-black/40">
+              <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+              <span>Replay Rise Animation</span>
+            </button>
+
+            <!-- Toggle Blueprint Wireframe Mode -->
+            <button id="blueprint-btn" onclick="toggleBlueprintMode()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/80 text-slate-300 border border-slate-700/60 hover:border-gold-500/40 hover:text-gold-300 transition-all duration-200 active:scale-95">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+              <span id="blueprint-btn-text">Toggle Blueprint Grid</span>
+            </button>
+
+            <!-- View Original Brand Asset Drawer -->
+            <button onclick="toggleReferenceDrawer()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:border-gold-500/30 transition-all duration-200 active:scale-95">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>Compare Reference Logo</span>
+            </button>
+          </div>
+
+          <!-- Reference Asset Drawer (Hidden by default) -->
+          <div id="reference-drawer" class="hidden mt-6 p-4 rounded-2xl bg-[#0b0e14] border border-gold-500/40 shadow-2xl max-w-sm text-center">
+            <div class="flex items-center justify-between pb-2 mb-3 border-b border-gold-500/20 text-xs font-mono text-gold-400">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> AUTHENTIC BRAND MARK
+              </span>
+              <button onclick="toggleReferenceDrawer()" class="text-slate-400 hover:text-white text-sm">✕</button>
+            </div>
+            <div class="relative rounded-xl overflow-hidden border border-slate-800 bg-black">
+              <img src="/assets/digithect-logo-hseU6PyU.jpg" alt="Digithect Software Services Authentic Logo" class="w-full h-auto object-contain mx-auto max-h-[200px]">
+            </div>
+            <p class="mt-2 text-[11px] text-slate-400">
+              Precise architectural vector translation animating the three ascending building towers of the letter 'D'.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Scroll Down Pill -->
+    <div class="w-full flex justify-center pt-8">
+      <a href="#services" class="flex flex-col items-center gap-1.5 text-xs text-slate-500 hover:text-gold-300 transition-colors">
+        <span class="font-mono text-[10px] tracking-widest uppercase">EXPLORE SOFTWARE DISCIPLINES</span>
+        <i data-lucide="chevron-down" class="w-4 h-4 animate-bounce text-gold-400"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 6 CORE SOFTWARE SERVICES SECTION -->
+  <!-- ========================================================= -->
+  <section id="services" class="relative py-28 bg-[#07090e] border-t border-gold-500/10 overflow-hidden">
+    <div class="absolute inset-0 architect-grid opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-xs font-mono text-gold-300">
+          <i data-lucide="zap" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>DISCIPLINES OF EXCELLENCE</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight">
+          High-Performance <span class="text-gold-gradient">Software Engineering</span>
+        </h2>
+
+        <p class="text-slate-400 text-base sm:text-lg">
+          Every system we build is engineered as an architectural landmark: bulletproof fault-tolerance, microsecond response times, and uncompromised cryptographic security.
+        </p>
+      </div>
+
+      <!-- 6 Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        
+        <!-- Service 1 -->
+        <div onclick="selectService(0)" class="service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-gradient-to-b from-[#151924] to-[#0c0f16] border-2 border-gold-400/80 shadow-[0_0_35px_rgba(212,167,55,0.2)]">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400 transition-all duration-300">
+              <i data-lucide="cloud-cog" class="w-7 h-7"></i>
+            </div>
+            <span class="font-mono text-xs text-gold-500/60 font-semibold">01 //</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-gold-200 transition-colors">
+            Enterprise Cloud & Distributed Systems
+          </h3>
+          <p class="text-xs font-mono text-gold-400/90 mb-4 uppercase tracking-wider">
+            High-Throughput, Fault-Tolerant Foundations
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Architecting resilient, self-healing multi-cloud environments engineered to sustain millions of concurrent transactions with 99.999% availability.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Kubernetes</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Multi-Cloud</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-gold-400">+3 more</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-300">UPTIME: <strong class="text-gold-300">99.999%</strong></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div onclick="selectService(1)" class="service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-[#0d1017]/80 hover:bg-[#121620] border border-gold-500/15 hover:border-gold-400/50">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400 transition-all duration-300">
+              <i data-lucide="cpu" class="w-7 h-7"></i>
+            </div>
+            <span class="font-mono text-xs text-gold-500/60 font-semibold">02 //</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-gold-200 transition-colors">
+            Bespoke AI & Autonomous Agent Platforms
+          </h3>
+          <p class="text-xs font-mono text-gold-400/90 mb-4 uppercase tracking-wider">
+            Proprietary Neural Intelligence Integrated into Workflows
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Developing custom neural networks, enterprise RAG pipelines, fine-tuned domain LLMs, and autonomous AI agents designed with privacy-first boundaries.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Private LLMs</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Vector DBs</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-gold-400">+3 more</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-300">ACCURACY: <strong class="text-gold-300">99.4%</strong></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div onclick="selectService(2)" class="service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-[#0d1017]/80 hover:bg-[#121620] border border-gold-500/15 hover:border-gold-400/50">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400 transition-all duration-300">
+              <i data-lucide="shield-check" class="w-7 h-7"></i>
+            </div>
+            <span class="font-mono text-xs text-gold-500/60 font-semibold">03 //</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-gold-200 transition-colors">
+            Fintech, Web3 & Mission-Critical Systems
+          </h3>
+          <p class="text-xs font-mono text-gold-400/90 mb-4 uppercase tracking-wider">
+            Sub-Millisecond Execution & Cryptographic Assurance
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Engineering high-frequency transaction engines, ledger security, zero-knowledge validation systems, and bank-grade payment architectures.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Low-Latency</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">PCI-DSS L1</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-gold-400">+3 more</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-300">LATENCY: <strong class="text-gold-300">&lt; 0.8ms</strong></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div onclick="selectService(3)" class="service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-[#0d1017]/80 hover:bg-[#121620] border border-gold-500/15 hover:border-gold-400/50">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400 transition-all duration-300">
+              <i data-lucide="layers" class="w-7 h-7"></i>
+            </div>
+            <span class="font-mono text-xs text-gold-500/60 font-semibold">04 //</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-gold-200 transition-colors">
+            Core De-Monolithing & Transformation
+          </h3>
+          <p class="text-xs font-mono text-gold-400/90 mb-4 uppercase tracking-wider">
+            Modernize Mainframe & Core Systems with Zero Downtime
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Transforming legacy codebases into modular, event-driven reactive architectures with zero data loss or operational interruptions.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Strangler Fig</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Kafka Sync</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-gold-400">+3 more</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-300">DOWNTIME: <strong class="text-gold-300">0 Hours</strong></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div onclick="selectService(4)" class="service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-[#0d1017]/80 hover:bg-[#121620] border border-gold-500/15 hover:border-gold-400/50">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400 transition-all duration-300">
+              <i data-lucide="lock" class="w-7 h-7"></i>
+            </div>
+            <span class="font-mono text-xs text-gold-500/60 font-semibold">05 //</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-gold-200 transition-colors">
+            Zero-Trust Cybersecurity Architecture
+          </h3>
+          <p class="text-xs font-mono text-gold-400/90 mb-4 uppercase tracking-wider">
+            Proactive Defense Built Deep into the Software Fabric
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Engineering defense-in-depth security architectures: automated threat modeling, penetration testing, cryptographic identity, and automated compliance.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Zero-Trust</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">mTLS</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-gold-400">+3 more</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-300">INCIDENTS: <strong class="text-gold-300">0 Breaches</strong></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div onclick="selectService(5)" class="service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-[#0d1017]/80 hover:bg-[#121620] border border-gold-500/15 hover:border-gold-400/50">
+          <div class="flex items-center justify-between mb-6">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center text-gold-300 group-hover:scale-105 group-hover:border-gold-400 transition-all duration-300">
+              <i data-lucide="sparkles" class="w-7 h-7"></i>
+            </div>
+            <span class="font-mono text-xs text-gold-500/60 font-semibold">06 //</span>
+          </div>
+          <h3 class="text-xl font-bold font-display text-white mb-2 group-hover:text-gold-200 transition-colors">
+            High-Frequency UX & Design Engineering
+          </h3>
+          <p class="text-xs font-mono text-gold-400/90 mb-4 uppercase tracking-wider">
+            Executive Glassmorphism & Flawless 120 FPS Interaction Speed
+          </p>
+          <p class="text-slate-400 text-sm leading-relaxed mb-6">
+            Translating sophisticated brand visions into pixel-perfect, 120 FPS web and mobile applications with bespoke micro-interactions and elite typography.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-6">
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">Design Systems</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-slate-300">120 FPS</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-mono text-gold-400">+3 more</span>
+          </div>
+          <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <span class="font-mono text-slate-300">PERFORMANCE: <strong class="text-gold-300">100/100</strong></span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500 group-hover:text-gold-400 group-hover:translate-x-1 transition-all"></i>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Spotlight Deep-Dive Panel -->
+      <div id="service-spotlight" class="relative rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#121622] via-[#0d1017] to-[#07090e] border border-gold-500/30 shadow-2xl overflow-hidden">
+        <div class="absolute inset-0 blueprint-grid opacity-20 pointer-events-none"></div>
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold-500/10 border border-gold-500/20 text-xs font-mono text-gold-300">
+              <span>ACTIVE ARCHITECTURAL SPECIFICATION</span>
+            </div>
+            <h3 id="spotlight-title" class="text-2xl sm:text-3xl font-extrabold font-display text-white">
+              Enterprise Cloud & Distributed Systems
+            </h3>
+            <p id="spotlight-desc" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Architecting resilient, self-healing multi-cloud environments engineered to sustain millions of concurrent transactions with 99.999% availability.
+            </p>
+            <div id="spotlight-features" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div class="flex items-start gap-2.5 text-xs text-slate-200">
+                <div class="w-4 h-4 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center shrink-0 mt-0.5 text-gold-300">✓</div>
+                <span>Zero-downtime blue/green deployment pipelines</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-200">
+                <div class="w-4 h-4 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center shrink-0 mt-0.5 text-gold-300">✓</div>
+                <span>Dynamic load balancing and automated geo-routing</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-200">
+                <div class="w-4 h-4 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center shrink-0 mt-0.5 text-gold-300">✓</div>
+                <span>Infrastructure-as-Code (IaC) with immutable state management</span>
+              </div>
+              <div class="flex items-start gap-2.5 text-xs text-slate-200">
+                <div class="w-4 h-4 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center shrink-0 mt-0.5 text-gold-300">✓</div>
+                <span>Real-time observability, tracing, and predictive anomaly triage</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-4 pt-4">
+              <button onclick="openModal()" class="px-6 py-3 rounded-xl font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-lg shadow-gold-500/20 transition-all text-sm flex items-center gap-2">
+                Architect This System With Us
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Telemetry Targets -->
+          <div class="lg:col-span-5 grid grid-cols-1 gap-4">
+            <div class="p-6 rounded-2xl bg-black/60 border border-gold-500/20 space-y-4">
+              <div class="text-xs font-mono text-gold-400 uppercase tracking-widest">
+                TELEMETRY & HARDENING TARGETS
+              </div>
+              <div class="grid grid-cols-3 gap-4 text-center">
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <div id="metric-1-val" class="text-lg sm:text-xl font-bold font-display text-white">99.999%</div>
+                  <div id="metric-1-lbl" class="text-[10px] font-mono text-slate-400 capitalize mt-0.5">Uptime</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <div id="metric-2-val" class="text-lg sm:text-xl font-bold font-display text-white">&lt;15ms</div>
+                  <div id="metric-2-lbl" class="text-[10px] font-mono text-slate-400 capitalize mt-0.5">Latency</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <div id="metric-3-val" class="text-lg sm:text-xl font-bold font-display text-white">10M+ RPS</div>
+                  <div id="metric-3-lbl" class="text-[10px] font-mono text-slate-400 capitalize mt-0.5">Scale</div>
+                </div>
+              </div>
+              <div class="pt-2 text-[11px] font-mono text-slate-400 bg-slate-900/40 p-3 rounded-lg border border-slate-800/80">
+                <div class="text-gold-400 font-semibold mb-1">DEPLOYMENT TOPOLOGY:</div>
+                Zero-trust VPC peering, auto-healing Kubernetes pods, multi-region failover across 3 availability zones.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- INTERACTIVE ARCHITECTURE CONFIGURATOR -->
+  <!-- ========================================================= -->
+  <section id="configurator" class="relative py-28 bg-[#050609] border-t border-gold-500/10 overflow-hidden">
+    <div class="absolute inset-0 blueprint-grid opacity-15 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-xs font-mono text-gold-300">
+          <i data-lucide="sliders" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>INTERACTIVE SYSTEM DESIGNER</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight">
+          Configure Your <span class="text-gold-gradient">Enterprise Blueprint</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Select your architecture parameters to simulate the optimal Digithect engineering blueprint, targeted latency tolerances, and delivery sprint timeline.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Controls Column -->
+        <div class="lg:col-span-7 space-y-8 bg-[#0b0e15]/80 p-6 sm:p-8 rounded-3xl border border-gold-500/20 backdrop-blur-xl">
+          
+          <!-- Step 1: System Domain -->
+          <div>
+            <label class="block text-xs font-mono text-gold-400 uppercase tracking-widest mb-3 flex items-center justify-between">
+              <span>01. Primary System Domain</span>
+              <span class="text-slate-500">Required</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="config-domain">
+              <button onclick="setConfigDomain('fintech', this)" class="cfg-btn p-4 rounded-xl text-left border bg-gold-500/15 border-gold-400 shadow-[0_0_15px_rgba(212,167,55,0.2)]">
+                <div class="font-semibold text-sm text-white">Fintech & Settlement Core</div>
+                <div class="text-[11px] text-slate-400 mt-1">Sub-millisecond ledger, fraud engine, multi-currency</div>
+              </button>
+              <button onclick="setConfigDomain('ai', this)" class="cfg-btn p-4 rounded-xl text-left border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-semibold text-sm text-white">Bespoke AI & Autonomous Agents</div>
+                <div class="text-[11px] text-slate-400 mt-1">Private domain LLM, RAG vector pipeline, agentic loops</div>
+              </button>
+              <button onclick="setConfigDomain('cloud', this)" class="cfg-btn p-4 rounded-xl text-left border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-semibold text-sm text-white">Distributed Cloud Microservices</div>
+                <div class="text-[11px] text-slate-400 mt-1">Auto-scaling event brokers, Kafka streaming, GraphQL</div>
+              </button>
+              <button onclick="setConfigDomain('modernize', this)" class="cfg-btn p-4 rounded-xl text-left border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-semibold text-sm text-white">Core Legacy De-Monolithing</div>
+                <div class="text-[11px] text-slate-400 mt-1">Zero-downtime strangler migration, dual-write parity</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 2: Concurrency & Throughput -->
+          <div>
+            <label class="block text-xs font-mono text-gold-400 uppercase tracking-widest mb-3 flex items-center justify-between">
+              <span>02. Throughput Envelope</span>
+              <span class="text-slate-500">Sizing</span>
+            </label>
+            <div class="grid grid-cols-3 gap-3" id="config-throughput">
+              <button onclick="setConfigThroughput('100k', this)" class="cfg-tp p-3 rounded-xl text-center border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-bold text-sm sm:text-base text-white">100K RPS</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">High-Concurrency</div>
+              </button>
+              <button onclick="setConfigThroughput('1m', this)" class="cfg-tp p-3 rounded-xl text-center border bg-gold-500/15 border-gold-400 shadow-[0_0_15px_rgba(212,167,55,0.2)]">
+                <div class="font-bold text-sm sm:text-base text-white">1M+ RPS</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Hyperscale Cluster</div>
+              </button>
+              <button onclick="setConfigThroughput('10m', this)" class="cfg-tp p-3 rounded-xl text-center border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-bold text-sm sm:text-base text-white">10M+ RPS</div>
+                <div class="text-[10px] text-slate-400 mt-0.5">Sovereign Core</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 3: Security & Cryptographic Standard -->
+          <div>
+            <label class="block text-xs font-mono text-gold-400 uppercase tracking-widest mb-3 flex items-center justify-between">
+              <span>03. Security & Compliance Standard</span>
+              <span class="text-slate-500">Hardening</span>
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3" id="config-sec">
+              <button onclick="setConfigSecurity('pqc', this)" class="cfg-sec p-3 rounded-xl text-left sm:text-center border bg-gold-500/15 border-gold-400 shadow-[0_0_15px_rgba(212,167,55,0.2)]">
+                <div class="font-semibold text-xs text-white">Post-Quantum Cryptography</div>
+                <div class="text-[10px] font-mono text-gold-400/90 mt-1">NIST-Standard</div>
+              </button>
+              <button onclick="setConfigSecurity('soc2', this)" class="cfg-sec p-3 rounded-xl text-left sm:text-center border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-semibold text-xs text-white">SOC2 Type II & ISO 27001</div>
+                <div class="text-[10px] font-mono text-gold-400/90 mt-1">Enterprise</div>
+              </button>
+              <button onclick="setConfigSecurity('pci', this)" class="cfg-sec p-3 rounded-xl text-left sm:text-center border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300">
+                <div class="font-semibold text-xs text-white">PCI-DSS L1 & FedRAMP</div>
+                <div class="text-[10px] font-mono text-gold-400/90 mt-1">Financial / Gov</div>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Blueprint Specification Output -->
+        <div class="lg:col-span-5 sticky top-28 space-y-6">
+          <div class="p-8 rounded-3xl bg-gradient-to-b from-[#131722] via-[#0d1017] to-[#07090f] border-2 border-gold-500/40 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent"></div>
+
+            <div class="flex items-center justify-between pb-4 border-b border-gold-500/20">
+              <div>
+                <div class="text-[10px] font-mono text-gold-400 tracking-widest">BLUEPRINT SPEC ID</div>
+                <div id="cfg-spec-id" class="text-base font-bold font-mono text-white">DGT-FINTECH-1M</div>
+              </div>
+              <div class="px-2.5 py-1 rounded bg-gold-500/20 text-gold-300 text-[10px] font-mono font-bold">
+                VERIFIED ARCHITECTURE
+              </div>
+            </div>
+
+            <div class="space-y-4 py-4">
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400">Target Availability SLA:</span>
+                <span id="cfg-sla" class="font-mono font-bold text-emerald-400">99.999% (Zero-Downtime)</span>
+              </div>
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400">P99 Latency Objective:</span>
+                <span id="cfg-lat" class="font-mono font-bold text-gold-300">&lt; 0.8ms P99</span>
+              </div>
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400">Security Standard:</span>
+                <span id="cfg-sec-txt" class="font-mono text-white text-[11px]">NIST Post-Quantum Cryptography</span>
+              </div>
+              <div class="flex justify-between items-center text-xs">
+                <span class="text-slate-400">Construction Sprints:</span>
+                <span id="cfg-timeline" class="font-mono font-bold text-white">8 – 12 Weeks</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-black/50 border border-slate-800 space-y-2 text-xs">
+              <div class="font-mono text-gold-400 text-[11px] font-semibold flex items-center gap-1.5">
+                <i data-lucide="server" class="w-3.5 h-3.5"></i> RECOMMENDED ENGINE STACK:
+              </div>
+              <p id="cfg-stack-desc" class="text-slate-300 text-[11px] leading-relaxed">
+                Go & Rust low-latency trading core, Apache Kafka streaming, PostgreSQL multi-master Raft consensus, Hardware Security Module (HSM).
+              </p>
+            </div>
+
+            <div class="pt-4">
+              <button onclick="openModal()" class="w-full py-4 rounded-xl font-bold text-black text-sm bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-xl shadow-gold-500/25 transition-all flex items-center justify-center gap-2">
+                Request Detailed Architectural Proposal
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+              <p class="text-center text-[10px] text-slate-500 mt-2 font-mono">
+                Includes mutual NDA, topographical audit roadmap, and fixed engineering milestones.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- 4-PHASE BLUEPRINT PROCESS METHODOLOGY -->
+  <!-- ========================================================= -->
+  <section id="process" class="relative py-28 bg-[#07090e] border-t border-gold-500/10 overflow-hidden">
+    <div class="absolute inset-0 architect-grid opacity-25 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-xs font-mono text-gold-300">
+          <i data-lucide="compass" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>THE DIGITHECT METHODOLOGY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight">
+          How We Build <span class="text-gold-gradient">Digital Monuments</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Software architecture is rigorous structural science. From topographical audit to sovereign deployment, our 4-phase lifecycle guarantees predictable outcomes.
+        </p>
+      </div>
+
+      <!-- Phase Selector Bar -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-12" id="phase-buttons">
+        <button onclick="selectPhase(0, this)" class="phase-btn p-6 rounded-2xl text-left border bg-[#141824] border-gold-400 shadow-[0_0_25px_rgba(212,167,55,0.2)]">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold font-mono text-gold-300">PHASE 01</span>
+            <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+          </div>
+          <div class="font-bold text-sm sm:text-base text-white">Architectural Audit & Discovery</div>
+        </button>
+
+        <button onclick="selectPhase(1, this)" class="phase-btn p-6 rounded-2xl text-left border bg-[#0d1017] border-slate-800/80 hover:border-slate-700 text-slate-400">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold font-mono text-slate-600">PHASE 02</span>
+          </div>
+          <div class="font-bold text-sm sm:text-base text-white">Modular Domain Modeling</div>
+        </button>
+
+        <button onclick="selectPhase(2, this)" class="phase-btn p-6 rounded-2xl text-left border bg-[#0d1017] border-slate-800/80 hover:border-slate-700 text-slate-400">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold font-mono text-slate-600">PHASE 03</span>
+          </div>
+          <div class="font-bold text-sm sm:text-base text-white">Precision Engineering & Hardening</div>
+        </button>
+
+        <button onclick="selectPhase(3, this)" class="phase-btn p-6 rounded-2xl text-left border bg-[#0d1017] border-slate-800/80 hover:border-slate-700 text-slate-400">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-2xl font-bold font-mono text-slate-600">PHASE 04</span>
+          </div>
+          <div class="font-bold text-sm sm:text-base text-white">Autonomous Scale & Handover</div>
+        </button>
+      </div>
+
+      <!-- Phase Detail View -->
+      <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-[#121622] via-[#0d1017] to-[#07090e] border border-gold-500/30 shadow-2xl relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-7 space-y-6">
+            <div class="text-xs font-mono text-gold-400 flex items-center gap-2">
+              <span id="phase-badge" class="px-2 py-0.5 rounded bg-gold-500/20 text-gold-300">STAGE 01</span>
+              <span>SYSTEM CONSTRUCT PROTOCOL</span>
+            </div>
+            <h3 id="phase-name" class="text-2xl sm:text-3xl font-extrabold font-display text-white">
+              Architectural Audit & Blueprint Discovery
+            </h3>
+            <p id="phase-desc" class="text-slate-300 text-base leading-relaxed">
+              We perform a forensic diagnostic of your technical topography, mapping bottlenecks, architectural debt, data flows, and concurrency limits.
+            </p>
+            <div class="space-y-3 pt-2">
+              <div class="text-xs font-mono text-slate-400 uppercase tracking-widest">
+                Key Phase Deliverables & Artefacts:
+              </div>
+              <div id="phase-deliverables" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex items-center gap-2.5 text-xs text-slate-200 p-2.5 rounded-xl bg-black/40 border border-slate-800">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                  <span>Topographical System Map</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-200 p-2.5 rounded-xl bg-black/40 border border-slate-800">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                  <span>Latency & Concurrency Audit</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-200 p-2.5 rounded-xl bg-black/40 border border-slate-800">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                  <span>Architectural Blueprint RFC</span>
+                </div>
+                <div class="flex items-center gap-2.5 text-xs text-slate-200 p-2.5 rounded-xl bg-black/40 border border-slate-800">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+                  <span>Risk Mitigation Matrix</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Pipeline Gate Visual -->
+          <div class="lg:col-span-5 bg-black/70 p-6 rounded-2xl border border-gold-500/20 relative">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs font-mono text-gold-400">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="activity" class="w-3.5 h-3.5 text-emerald-400 animate-pulse"></i>
+                VERIFICATION PIPELINE
+              </span>
+              <span id="gate-indicator" class="text-slate-500">GATE 01</span>
+            </div>
+            <div class="space-y-4 py-4 text-xs font-mono">
+              <div class="flex justify-between items-center p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400">Formal Verification:</span>
+                <span class="text-emerald-400">100% Deterministic</span>
+              </div>
+              <div class="flex justify-between items-center p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400">Load Simulation:</span>
+                <span class="text-gold-300">10x Projected Peak</span>
+              </div>
+              <div class="flex justify-between items-center p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400">Chaos Testing:</span>
+                <span class="text-white">Region Kill Tests Passed</span>
+              </div>
+              <div class="flex justify-between items-center p-2 rounded bg-slate-900/60 border border-slate-800/80">
+                <span class="text-slate-400">Executive Warranty:</span>
+                <span class="text-gold-400 font-bold">12-Month SLA Included</span>
+              </div>
+            </div>
+            <button onclick="openModal()" class="w-full mt-2 py-3 rounded-xl font-semibold text-black text-xs bg-gradient-to-r from-gold-300 to-amber-500 hover:brightness-110 transition-all flex items-center justify-center gap-2">
+              Inquire About Phase 01 Engagement
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- BATTLE-HARDENED TECH MATRIX -->
+  <!-- ========================================================= -->
+  <section id="tech-stack" class="relative py-28 bg-[#050609] border-t border-gold-500/10 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/25 text-xs font-mono text-gold-300">
+          <i data-lucide="terminal" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>ENTERPRISE ENGINEERING MATRIX</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display text-white tracking-tight">
+          Battle-Hardened <span class="text-gold-gradient">Technology Stack</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          We select only mature, memory-safe, ultra-low latency frameworks engineered to sustain extreme transaction volumes and zero failure states.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <button onclick="filterTech('backend', this)" class="tech-tab flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border bg-gold-500 text-black border-gold-400 shadow-[0_0_20px_rgba(212,167,55,0.3)]">
+          <i data-lucide="server" class="w-4 h-4"></i>
+          <span>Backend & Core Systems</span>
+        </button>
+        <button onclick="filterTech('cloud', this)" class="tech-tab flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border bg-slate-900/80 text-slate-300 border-slate-800 hover:border-gold-500/30 hover:text-white">
+          <i data-lucide="cloud" class="w-4 h-4"></i>
+          <span>Cloud & Distributed Edge</span>
+        </button>
+        <button onclick="filterTech('ai', this)" class="tech-tab flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border bg-slate-900/80 text-slate-300 border-slate-800 hover:border-gold-500/30 hover:text-white">
+          <i data-lucide="cpu" class="w-4 h-4"></i>
+          <span>AI, Neural & Vector</span>
+        </button>
+        <button onclick="filterTech('sec', this)" class="tech-tab flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border bg-slate-900/80 text-slate-300 border-slate-800 hover:border-gold-500/30 hover:text-white">
+          <i data-lucide="shield-check" class="w-4 h-4"></i>
+          <span>Cyber & Zero-Trust</span>
+        </button>
+      </div>
+
+      <!-- Tech Cards Grid -->
+      <div id="tech-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- METRICS & EXECUTIVE CREDIBILITY -->
+  <!-- ========================================================= -->
+  <section class="relative py-24 bg-[#080b12] border-t border-gold-500/15 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div class="p-8 rounded-2xl bg-gradient-to-b from-[#111520] to-[#0a0d14] border border-gold-500/20 hover:border-gold-400/50 transition-all text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-2">99.999%</div>
+          <div class="text-xs font-mono font-bold text-gold-400 uppercase tracking-wider mb-2">UPTIME SLA</div>
+          <p class="text-[11px] text-slate-400">Across all production client deployments</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-gradient-to-b from-[#111520] to-[#0a0d14] border border-gold-500/20 hover:border-gold-400/50 transition-all text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-2">&lt; 0.8ms</div>
+          <div class="text-xs font-mono font-bold text-gold-400 uppercase tracking-wider mb-2">P99 LATENCY</div>
+          <p class="text-[11px] text-slate-400">Optimized distributed service execution</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-gradient-to-b from-[#111520] to-[#0a0d14] border border-gold-500/20 hover:border-gold-400/50 transition-all text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-2">$10B+</div>
+          <div class="text-xs font-mono font-bold text-gold-400 uppercase tracking-wider mb-2">TRANSACTION VOLUME</div>
+          <p class="text-[11px] text-slate-400">Processed securely with zero breaches</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-gradient-to-b from-[#111520] to-[#0a0d14] border border-gold-500/20 hover:border-gold-400/50 transition-all text-center">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-2">140+</div>
+          <div class="text-xs font-mono font-bold text-gold-400 uppercase tracking-wider mb-2">ENTERPRISE ARCHITECTURES</div>
+          <p class="text-[11px] text-slate-400">Fintech, AI, Healthcare, Defense</p>
+        </div>
+      </div>
+
+      <!-- Sovereign Quote Box -->
+      <div class="relative rounded-3xl p-8 sm:p-14 bg-gradient-to-r from-[#121622] via-[#0d1017] to-[#121622] border-2 border-gold-500/30 text-center max-w-4xl mx-auto shadow-2xl">
+        <blockquote class="text-lg sm:text-2xl font-display font-medium text-slate-200 leading-relaxed italic mb-8">
+          "In computing, architecture is destiny. When a system is engineered with structural discipline and mathematical elegance from the foundation, it does not fail under pressure—it ascends."
+        </blockquote>
+        <div class="flex flex-col items-center">
+          <div class="w-12 h-1 bg-gradient-to-r from-transparent via-gold-400 to-transparent mb-4"></div>
+          <div class="text-sm font-bold font-mono tracking-widest text-gold-300">
+            DIGITHECT SOFTWARE SERVICES
+          </div>
+          <div class="text-xs text-slate-400 font-mono mt-0.5">
+            Office of the Principal Systems Architect
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================= -->
+  <!-- FOOTER -->
+  <!-- ========================================================= -->
+  <footer class="relative bg-[#040508] border-t border-gold-500/15 pt-20 pb-12 overflow-hidden text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-slate-900">
+        
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-gold-500/20 to-black border border-gold-500/30 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" class="w-7 h-7">
+                <polygon points="28,80 28,62 36,54 36,80" fill="#E6C875" />
+                <polygon points="40,80 40,46 48,38 48,80" fill="#DFBD67" />
+                <path d="M 52 80 L 52 35 L 45 31 L 49 24 L 60 18 L 60 80 Z" fill="#F3E5AB" />
+                <path d="M 60 14 C 80 26, 92 42, 86 58 C 82 69, 72 78, 60 78 C 66 73, 72 65, 74 54 C 76 43, 70 32, 60 26 Z" fill="#D4A737" />
+              </svg>
+            </div>
+            <div class="flex flex-col">
+              <span class="font-bold font-display text-white text-base tracking-[0.2em]">
+                DIGITH<span class="text-gold-400">E</span>CT
+              </span>
+              <span class="text-[8px] font-mono tracking-[0.35em] text-gold-400/80">
+                SOFTWARE SERVICES
+              </span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            Architecting mission-critical software infrastructure, bespoke AI engines, and sovereign distributed platforms for global enterprise institutions.
+          </p>
+          <div class="pt-2 flex items-center gap-3 text-xs font-mono text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>GLOBAL STATUS: ALL NODES OPERATIONAL (100%)</span>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Disciplines</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#services" class="hover:text-gold-300 transition-colors">Distributed Cloud Systems</a></li>
+            <li><a href="#services" class="hover:text-gold-300 transition-colors">Private Domain AI & RAG</a></li>
+            <li><a href="#services" class="hover:text-gold-300 transition-colors">Fintech Core & Settlement</a></li>
+            <li><a href="#services" class="hover:text-gold-300 transition-colors">Legacy De-Monolithing</a></li>
+            <li><a href="#services" class="hover:text-gold-300 transition-colors">Post-Quantum Zero Trust</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Methodology</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#process" class="hover:text-gold-300 transition-colors">Forensic Structural Audit</a></li>
+            <li><a href="#process" class="hover:text-gold-300 transition-colors">Domain-Driven Design Specs</a></li>
+            <li><a href="#process" class="hover:text-gold-300 transition-colors">Chaos Engineering Suites</a></li>
+            <li><a href="#configurator" class="hover:text-gold-300 transition-colors">Interactive Blueprint Designer</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Assurance & SLA</h4>
+          <ul class="space-y-2 text-xs">
+            <li><span class="text-slate-400">SOC2 Type II Hardening</span></li>
+            <li><span class="text-slate-400">ISO 27001 Readiness</span></li>
+            <li><span class="text-slate-400">Mutual NDA Sovereign Standard</span></li>
+            <li><span class="text-slate-400">12-Month Architecture Warranty</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+        <div>
+          © 2026 Digithect Software Services Inc. All rights reserved. Sovereign digital architecture.
+        </div>
+        <div class="flex items-center gap-6">
+          <button onclick="openModal()" class="text-gold-400 hover:text-gold-300 transition-colors">Consultation Portal</button>
+          <a href="#" class="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-gold-300 transition-all flex items-center gap-1.5">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            <span>Top</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================= -->
+  <!-- CONSULTATION MODAL -->
+  <!-- ========================================================= -->
+  <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div onclick="closeModal()" class="fixed inset-0 bg-black/80 backdrop-blur-md"></div>
+
+    <div class="relative w-full max-w-2xl bg-gradient-to-b from-[#111520] via-[#0b0e15] to-[#07090e] border-2 border-gold-500/40 rounded-3xl p-6 sm:p-10 shadow-2xl z-10 max-h-[90vh] overflow-y-auto">
+      <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white">
+        ✕
+      </button>
+
+      <div id="modal-form-view">
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-mono text-gold-300 mb-3">
+            <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+            <span>CONFIDENTIAL ARCHITECTURAL CONSULTATION</span>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold font-display text-white">
+            Engage Digithect Software Services
+          </h3>
+          <p class="text-slate-400 text-xs sm:text-sm mt-1">
+            Connect directly with our Principal Enterprise Architect to review your technical topography.
+          </p>
+        </div>
+
+        <form onsubmit="handleFormSubmit(event)" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">YOUR NAME *</label>
+              <input required id="form-name" type="text" placeholder="e.g. Dr. Alexander Vance" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">ENTERPRISE / ORGANIZATION *</label>
+              <input required id="form-company" type="text" placeholder="e.g. Sovereign Global Labs" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">WORK EMAIL *</label>
+              <input required id="form-email" type="email" placeholder="alexander@company.com" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-mono text-slate-300 mb-1">PRIMARY SERVICE FOCUS</label>
+              <select id="form-service" class="w-full px-4 py-2.5 rounded-xl bg-black/60 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm">
+                <option>Enterprise Cloud & Distributed Systems</option>
+                <option>Bespoke AI & Autonomous Agent Platforms</option>
+                <option>Fintech Core & Settlement</option>
+                <option>Legacy Core De-Monolithing</option>
+                <option>Zero-Trust Cybersecurity Architecture</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-slate-300 mb-1">TECHNICAL SPECIFICATIONS / ARCHITECTURAL GOALS</label>
+            <textarea id="form-details" rows="3" placeholder="Describe your current tech stack, concurrency challenges, latency expectations, or migration targets..." class="w-full p-4 rounded-xl bg-black/60 border border-slate-800 focus:border-gold-400 focus:outline-none text-white text-sm"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button id="form-submit-btn" type="submit" class="w-full py-4 rounded-xl font-bold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-xl shadow-gold-500/25 transition-all text-sm flex items-center justify-center gap-2">
+              <span>Submit Architectural Inquiry</span>
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </button>
+            <p class="text-center text-[10px] text-slate-500 mt-2 font-mono">
+              Protected by Digithect mutual Non-Disclosure Agreement (NDA). All intellectual property remains sovereign.
+            </p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Success View -->
+      <div id="modal-success-view" class="hidden text-center py-10 space-y-6">
+        <div class="w-20 h-20 rounded-full bg-gold-500/20 border-2 border-gold-400 mx-auto flex items-center justify-center text-gold-300">
+          <i data-lucide="check-circle-2" class="w-10 h-10"></i>
+        </div>
+        <div>
+          <div class="text-xs font-mono text-gold-400 mb-1">DOCKET #DGT-ARCH-9904 INITIATED</div>
+          <h3 class="text-3xl font-extrabold font-display text-white">Inquiry Received</h3>
+          <p class="text-slate-300 text-sm max-w-md mx-auto mt-2">
+            Thank you, <strong id="success-client-name" class="text-gold-200"></strong>. Our Principal Systems Architect is reviewing your requirements and will reach out to you within 12 business hours.
+          </p>
+        </div>
+        <button onclick="closeModal()" class="px-8 py-3 rounded-xl font-semibold text-black bg-gradient-to-r from-gold-300 to-amber-500 text-xs shadow-lg">
+          Return to Site
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- JAVASCRIPT CONTROLLERS -->
+  <!-- ========================================================= -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // -----------------------------------------------------------
+    // HERO BUILDING RISE ANIMATION SEQUENCER
+    // -----------------------------------------------------------
+    const svgElem = document.getElementById('digithect-svg');
+    const hudStatus = document.getElementById('hud-status');
+    const timelineBar = document.getElementById('timeline-bar');
+    let isWireframe = false;
+
+    function triggerEmblemAnimation() {
+      // Reset classes
+      svgElem.classList.remove('animated');
+      timelineBar.style.width = '0%';
+      hudStatus.textContent = 'SYSTEM INIT // FOUNDATION MATRIX';
+
+      // Force reflow
+      void svgElem.offsetWidth;
+
+      // Start animation
+      setTimeout(() => {
+        svgElem.classList.add('animated');
+        timelineBar.style.width = '100%';
+        hudStatus.textContent = 'PHASE 01 // TOWER A ELEVATION [42%]';
+      }, 50);
+
+      setTimeout(() => {
+        hudStatus.textContent = 'PHASE 02 // TOWER B ELEVATION [75%]';
+      }, 750);
+
+      setTimeout(() => {
+        hudStatus.textContent = 'PHASE 03 // MASTER SPIRE RISE [100%]';
+      }, 1350);
+
+      setTimeout(() => {
+        hudStatus.textContent = 'PHASE 04 // HARMONIC D-ARC SYNTHESIS';
+      }, 2150);
+
+      setTimeout(() => {
+        hudStatus.textContent = 'ARCHITECTURAL EMBLEM // LOCKED 24K';
+      }, 3100);
+    }
+
+    // Trigger rise animation on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(triggerEmblemAnimation, 300);
+    });
+
+    // Toggle Blueprint Mode
+    function toggleBlueprintMode() {
+      isWireframe = !isWireframe;
+      const guides = document.getElementById('blueprint-guides');
+      const layer = document.getElementById('blueprint-layer');
+      const btn = document.getElementById('blueprint-btn');
+      const btnTxt = document.getElementById('blueprint-btn-text');
+
+      if (isWireframe) {
+        guides.classList.remove('hidden');
+        layer.classList.remove('opacity-15');
+        layer.classList.add('opacity-40');
+        btn.classList.add('bg-gold-500', 'text-black', 'border-gold-400');
+        btn.classList.remove('bg-slate-900/80', 'text-slate-300');
+        btnTxt.textContent = 'Blueprint Grid: ACTIVE';
+      } else {
+        guides.classList.add('hidden');
+        layer.classList.add('opacity-15');
+        layer.classList.remove('opacity-40');
+        btn.classList.remove('bg-gold-500', 'text-black', 'border-gold-400');
+        btn.classList.add('bg-slate-900/80', 'text-slate-300');
+        btnTxt.textContent = 'Toggle Blueprint Grid';
+      }
+    }
+
+    // Toggle Reference Logo Drawer
+    function toggleReferenceDrawer() {
+      const drawer = document.getElementById('reference-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    // 3D Parallax Tilt for Emblem Card
+    const card = document.getElementById('emblem-card');
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 16;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * -16;
+      card.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+    });
+
+    // -----------------------------------------------------------
+    // SERVICES SPOTLIGHT CONTROLLER
+    // -----------------------------------------------------------
+    const serviceSpecs = [
+      {
+        title: "Enterprise Cloud & Distributed Systems",
+        desc: "Architecting resilient, self-healing multi-cloud environments engineered to sustain millions of concurrent transactions with 99.999% availability.",
+        features: [
+          "Zero-downtime blue/green deployment pipelines",
+          "Dynamic load balancing and automated geo-routing",
+          "Infrastructure-as-Code (IaC) with immutable state management",
+          "Real-time observability, tracing, and predictive anomaly triage"
+        ],
+        metrics: [ { val: "99.999%", lbl: "Uptime" }, { val: "<15ms", lbl: "Latency" }, { val: "10M+ RPS", lbl: "Scale" } ]
+      },
+      {
+        title: "Bespoke AI & Autonomous Agent Platforms",
+        desc: "Developing custom neural networks, enterprise RAG pipelines, fine-tuned domain LLMs, and autonomous AI agents designed with privacy-first boundaries.",
+        features: [
+          "Air-gapped private LLM architectures for high-security sectors",
+          "Multi-agent reasoning loops with deterministic verification gates",
+          "High-scale semantic search & sub-second vector lookups",
+          "Real-time continuous model distillation & drift mitigation"
+        ],
+        metrics: [ { val: "99.4%", lbl: "Accuracy" }, { val: "4x Faster", lbl: "Processing" }, { val: "SOC2", lbl: "Compliance" } ]
+      },
+      {
+        title: "Fintech, Web3 & Mission-Critical Systems",
+        desc: "Engineering high-frequency transaction engines, ledger security, zero-knowledge validation systems, and bank-grade payment architectures.",
+        features: [
+          "Hardware-accelerated cryptographic signing & verification",
+          "Real-time algorithmic fraud prevention and AML surveillance",
+          "Deterministic state machines with instant rollback capabilities",
+          "Formal verification against race conditions & exploits"
+        ],
+        metrics: [ { val: "<0.8ms", lbl: "Execution" }, { val: "Bank Grade", lbl: "Security" }, { val: "$10B+", lbl: "Volume" } ]
+      },
+      {
+        title: "Core De-Monolithing & Transformation",
+        desc: "Transforming legacy codebases into modular, event-driven reactive architectures with zero data loss or operational interruptions.",
+        features: [
+          "Strangler-fig migration strategies ensuring seamless parallel running",
+          "Dual-write synchronization with continuous parity verification",
+          "Containerization & micro-frontend decoupling",
+          "Preservation of legacy business logic with modernized observability"
+        ],
+        metrics: [ { val: "0 Hours", lbl: "Downtime" }, { val: "6.5x", lbl: "Speedup" }, { val: "-80%", lbl: "Tech Debt" } ]
+      },
+      {
+        title: "Zero-Trust Cybersecurity Architecture",
+        desc: "Engineering defense-in-depth security architectures: automated threat modeling, penetration testing, cryptographic identity, and automated compliance.",
+        features: [
+          "Micro-segmented network boundaries with ephemeral secrets",
+          "Mutual TLS (mTLS) between all microservices and edge gateways",
+          "Automated dynamic application security testing (DAST) in CI/CD",
+          "Post-quantum cryptographic key exchange readiness"
+        ],
+        metrics: [ { val: "0", lbl: "Breaches" }, { val: "100%", lbl: "Compliance" }, { val: "1st Pass", lbl: "Audit" } ]
+      },
+      {
+        title: "High-Frequency UX & Design Engineering",
+        desc: "Translating sophisticated brand visions into pixel-perfect, 120 FPS web and mobile applications with bespoke micro-interactions and elite typography.",
+        features: [
+          "Custom WebGL / Canvas / SVG accelerated interactive visualizations",
+          "Modular design tokens powering unified cross-platform interfaces",
+          "Zero-jank animations running entirely on GPU compositor threads",
+          "Comprehensive accessibility (WCAG 2.1 AAA) compliance"
+        ],
+        metrics: [ { val: "100/100", lbl: "Lighthouse" }, { val: "120 FPS", lbl: "Framerate" }, { val: "+48%", lbl: "Conversion" } ]
+      }
+    ];
+
+    function selectService(index) {
+      const spec = serviceSpecs[index];
+      document.getElementById('spotlight-title').textContent = spec.title;
+      document.getElementById('spotlight-desc').textContent = spec.desc;
+
+      const featContainer = document.getElementById('spotlight-features');
+      featContainer.innerHTML = spec.features.map(f => `
+        <div class="flex items-start gap-2.5 text-xs text-slate-200">
+          <div class="w-4 h-4 rounded-full bg-gold-500/20 border border-gold-500/40 flex items-center justify-center shrink-0 mt-0.5 text-gold-300">✓</div>
+          <span>${f}</span>
+        </div>
+      `).join('');
+
+      document.getElementById('metric-1-val').textContent = spec.metrics[0].val;
+      document.getElementById('metric-1-lbl').textContent = spec.metrics[0].lbl;
+      document.getElementById('metric-2-val').textContent = spec.metrics[1].val;
+      document.getElementById('metric-2-lbl').textContent = spec.metrics[1].lbl;
+      document.getElementById('metric-3-val').textContent = spec.metrics[2].val;
+      document.getElementById('metric-3-lbl').textContent = spec.metrics[2].lbl;
+
+      // Update card borders
+      document.querySelectorAll('.service-card').forEach((c, idx) => {
+        if (idx === index) {
+          c.className = 'service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-gradient-to-b from-[#151924] to-[#0c0f16] border-2 border-gold-400/80 shadow-[0_0_35px_rgba(212,167,55,0.2)]';
+        } else {
+          c.className = 'service-card group relative p-8 rounded-2xl cursor-pointer transition-all duration-300 bg-[#0d1017]/80 hover:bg-[#121620] border border-gold-500/15 hover:border-gold-400/50';
+        }
+      });
+    }
+
+    // -----------------------------------------------------------
+    // INTERACTIVE BLUEPRINT CONFIGURATOR
+    // -----------------------------------------------------------
+    let cfgState = {
+      domain: 'fintech',
+      throughput: '1m',
+      security: 'pqc'
+    };
+
+    function updateConfigDisplay() {
+      document.getElementById('cfg-spec-id').textContent = `DGT-${cfgState.domain.toUpperCase()}-${cfgState.throughput.toUpperCase()}`;
+      
+      let sla = cfgState.throughput === '10m' ? '99.999% (Sovereign)' : '99.99%';
+      let lat = cfgState.domain === 'fintech' ? '< 0.8ms P99' : cfgState.domain === 'ai' ? '< 45ms TTFT' : '< 12ms P99';
+      let time = cfgState.throughput === '10m' ? '12 – 16 Weeks' : cfgState.throughput === '1m' ? '8 – 12 Weeks' : '6 – 8 Weeks';
+      
+      let secName = cfgState.security === 'pqc' ? 'NIST Post-Quantum Cryptography' : cfgState.security === 'soc2' ? 'SOC2 Type II & ISO 27001' : 'PCI-DSS L1 & FedRAMP';
+
+      let stackDesc = {
+        fintech: "Go & Rust low-latency trading core, Apache Kafka streaming, PostgreSQL multi-master Raft consensus, Hardware Security Module (HSM).",
+        ai: "PyTorch inference clusters, Qdrant vector index, LangGraph agentic orchestrators, air-gapped private weights.",
+        cloud: "Kubernetes GitOps, Envoy service mesh, Terraform IaC, distributed Redis cache, Prometheus/Grafana tracing.",
+        modernize: "Strangler-fig proxy router, dual-write CDC sync engine, automated regression parity testing harness."
+      }[cfgState.domain];
+
+      document.getElementById('cfg-sla').textContent = sla;
+      document.getElementById('cfg-lat').textContent = lat;
+      document.getElementById('cfg-sec-txt').textContent = secName;
+      document.getElementById('cfg-timeline').textContent = time;
+      document.getElementById('cfg-stack-desc').textContent = stackDesc;
+    }
+
+    function setConfigDomain(d, el) {
+      cfgState.domain = d;
+      document.querySelectorAll('.cfg-btn').forEach(b => {
+        b.className = 'cfg-btn p-4 rounded-xl text-left border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300';
+      });
+      el.className = 'cfg-btn p-4 rounded-xl text-left border bg-gold-500/15 border-gold-400 shadow-[0_0_15px_rgba(212,167,55,0.2)] text-white';
+      updateConfigDisplay();
+    }
+
+    function setConfigThroughput(tp, el) {
+      cfgState.throughput = tp;
+      document.querySelectorAll('.cfg-tp').forEach(b => {
+        b.className = 'cfg-tp p-3 rounded-xl text-center border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300';
+      });
+      el.className = 'cfg-tp p-3 rounded-xl text-center border bg-gold-500/15 border-gold-400 shadow-[0_0_15px_rgba(212,167,55,0.2)] text-white';
+      updateConfigDisplay();
+    }
+
+    function setConfigSecurity(sec, el) {
+      cfgState.security = sec;
+      document.querySelectorAll('.cfg-sec').forEach(b => {
+        b.className = 'cfg-sec p-3 rounded-xl text-left sm:text-center border bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300';
+      });
+      el.className = 'cfg-sec p-3 rounded-xl text-left sm:text-center border bg-gold-500/15 border-gold-400 shadow-[0_0_15px_rgba(212,167,55,0.2)] text-white';
+      updateConfigDisplay();
+    }
+
+    // -----------------------------------------------------------
+    // BLUEPRINT METHODOLOGY PHASES
+    // -----------------------------------------------------------
+    const phasesData = [
+      {
+        num: "01",
+        badge: "STAGE 01",
+        name: "Architectural Audit & Blueprint Discovery",
+        desc: "We perform a forensic diagnostic of your technical topography, mapping bottlenecks, architectural debt, data flows, and concurrency limits.",
+        deliverables: ["Topographical System Map", "Latency & Concurrency Audit", "Architectural Blueprint RFC", "Risk Mitigation Matrix"]
+      },
+      {
+        num: "02",
+        badge: "STAGE 02",
+        name: "Modular Domain Modeling & System Design",
+        desc: "Crafting the decoupled domain architecture with strict boundary contracts, event models, schema definitions, and cloud topologies.",
+        deliverables: ["Domain-Driven Design Specs", "API Contract Protocols", "Zero-Trust Security Schema", "Scalability Threshold Benchmarks"]
+      },
+      {
+        num: "03",
+        badge: "STAGE 03",
+        name: "Precision Engineering & Continuous Hardening",
+        desc: "Elite engineering sprints constructing the core engines with comprehensive unit, integration, fuzzing, and load simulations.",
+        deliverables: ["Clean Architecture Codebase", "Automated CI/CD Pipeline", "Chaos Engineering Suite", "Formal Parity Tests"]
+      },
+      {
+        num: "04",
+        badge: "STAGE 04",
+        name: "Autonomous Scale & Executive Handover",
+        desc: "Deployment through progressive canary rollouts, live telemetry calibration, internal team upskilling, and architectural warranty.",
+        deliverables: ["Zero-Downtime Rollout", "Live APM Dashboards", "Architecture Runbooks", "24/7 SLA Engineering Support"]
+      }
+    ];
+
+    function selectPhase(idx, el) {
+      const p = phasesData[idx];
+      document.getElementById('phase-badge').textContent = p.badge;
+      document.getElementById('phase-name').textContent = p.name;
+      document.getElementById('phase-desc').textContent = p.desc;
+      document.getElementById('gate-indicator').textContent = `GATE 0${idx + 1}`;
+
+      const deliv = document.getElementById('phase-deliverables');
+      deliv.innerHTML = p.deliverables.map(d => `
+        <div class="flex items-center gap-2.5 text-xs text-slate-200 p-2.5 rounded-xl bg-black/40 border border-slate-800">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400 shrink-0"></i>
+          <span>${d}</span>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.phase-btn').forEach((b, i) => {
+        if (i === idx) {
+          b.className = 'phase-btn p-6 rounded-2xl text-left border bg-[#141824] border-gold-400 shadow-[0_0_25px_rgba(212,167,55,0.2)]';
+        } else {
+          b.className = 'phase-btn p-6 rounded-2xl text-left border bg-[#0d1017] border-slate-800/80 hover:border-slate-700 text-slate-400';
+        }
+      });
+      lucide.createIcons();
+    }
+
+    // -----------------------------------------------------------
+    // TECH MATRIX CONTROLLER
+    // -----------------------------------------------------------
+    const techData = {
+      backend: [
+        { name: "Go / Golang", role: "Ultra-fast distributed microservices & networking" },
+        { name: "Rust", role: "Memory-safe systems programming & low-latency engines" },
+        { name: "Node.js / TypeScript", role: "Event-driven asynchronous APIs & orchestrators" },
+        { name: "Python", role: "High-performance AI pipelines & neural model training" },
+        { name: "Java / Spring Boot", role: "Hardened enterprise core banking & transaction layers" }
+      ],
+      cloud: [
+        { name: "Kubernetes & Docker", role: "Container orchestration & resilient cluster scaling" },
+        { name: "Terraform & Pulumi", role: "Deterministic Infrastructure as Code" },
+        { name: "AWS / Google Cloud", role: "Multi-region cloud infrastructure & edge computing" },
+        { name: "Apache Kafka", role: "Sub-millisecond event streaming & message brokerage" },
+        { name: "PostgreSQL & Redis", role: "ACID compliance paired with distributed caching" }
+      ],
+      ai: [
+        { name: "PyTorch & TensorRT", role: "Deep learning models & GPU-accelerated inference" },
+        { name: "LangChain & LlamaIndex", role: "Autonomous agent reasoning & contextual retrieval" },
+        { name: "Qdrant / Pinecone", role: "High-dimensional vector similarity indexing" },
+        { name: "Ollama / vLLM", role: "Private on-premise LLM serving & quantization" }
+      ],
+      sec: [
+        { name: "HashiCorp Vault", role: "Dynamic secret rotation & identity management" },
+        { name: "Envoy & Istio", role: "Service mesh with zero-trust mTLS encryption" },
+        { name: "OpenID Connect / OAuth2", role: "Cryptographic multi-tenant identity federation" },
+        { name: "Post-Quantum Crypto", role: "Quantum-resistant key encapsulation algorithms" }
+      ]
+    };
+
+    function renderTech(cat) {
+      const items = techData[cat] || techData.backend;
+      const grid = document.getElementById('tech-grid');
+      grid.innerHTML = items.map(t => `
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-[#0e121a] to-[#080b10] border border-gold-500/20 hover:border-gold-400/60 transition-all duration-300 group">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-bold text-base text-white group-hover:text-gold-200 transition-colors font-display">${t.name}</span>
+            <span class="w-2 h-2 rounded-full bg-gold-400/60 group-hover:bg-gold-400 transition-colors"></span>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed font-mono">${t.role}</p>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[10px] font-mono text-gold-400/80">
+            <span>PRODUCTION CERTIFIED</span>
+            <span>ZERO-TRUST READY</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterTech(cat, el) {
+      document.querySelectorAll('.tech-tab').forEach(b => {
+        b.className = 'tech-tab flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border bg-slate-900/80 text-slate-300 border-slate-800 hover:border-gold-500/30 hover:text-white';
+      });
+      el.className = 'tech-tab flex items-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 border bg-gold-500 text-black border-gold-400 shadow-[0_0_20px_rgba(212,167,55,0.3)]';
+      renderTech(cat);
+    }
+    renderTech('backend');
+
+    // -----------------------------------------------------------
+    // MODAL & FORM CONTROLLER
+    // -----------------------------------------------------------
+    const modal = document.getElementById('consultation-modal');
+    const formView = document.getElementById('modal-form-view');
+    const successView = document.getElementById('modal-success-view');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      formView.classList.remove('hidden');
+      successView.classList.add('hidden');
+    }
+
+    function closeModal() {
+      modal.classList.add('hidden');
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const btn = document.getElementById('form-submit-btn');
+
+      btn.innerHTML = `
+        <span class="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></span>
+        <span>Initiating Architectural Docket...</span>
+      `;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        formView.classList.add('hidden');
+        successView.classList.remove('hidden');
+        document.getElementById('success-client-name').textContent = name;
+
+        // Golden Confetti Burst
+        if (typeof confetti === 'function') {
+          confetti({
+            particleCount: 120,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#D4A737', '#FFF1B8', '#E5C163', '#FFFFFF']
+          });
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
