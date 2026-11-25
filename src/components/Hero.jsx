@@ -14,10 +14,21 @@ export default function Hero({ onOpenConsultation }) {
         <div className="w-[300px] sm:w-[400px] md:w-[480px] lg:w-[520px]">
           <AnimatedDigithectLogo size="lg" showControls={false} />
         </div>
+
+        {/* Mobile Centerpiece CTA Button */}
+        <div className="sm:hidden mt-6 z-20 flex flex-col items-center gap-3">
+          <a
+            href="#services"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-bold text-xs tracking-wider shadow-[0_8px_25px_rgba(212,167,55,0.35)] active:scale-95 transition-all"
+          >
+            <span>Explore Services</span>
+            <ArrowDown className="w-3.5 h-3.5 text-black" />
+          </a>
+        </div>
       </div>
 
-      {/* Bottom Right Corner Button */}
-      <div className="fixed bottom-8 right-8 z-50">
+      {/* Desktop Floating Corner Button */}
+      <div className="hidden sm:block fixed bottom-8 right-8 z-30">
         <a
           href="#services"
           className="group relative inline-flex items-center gap-3 px-6 sm:px-7 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-bold text-xs sm:text-sm tracking-wider shadow-[0_8px_30px_rgba(212,167,55,0.35)] hover:shadow-[0_12px_45px_rgba(212,167,55,0.6)] hover:brightness-110 active:scale-95 transition-all duration-300"
