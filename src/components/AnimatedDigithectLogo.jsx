@@ -252,12 +252,12 @@ export default function AnimatedDigithectLogo({
             transition={{ duration: 1.1, delay: 2.95, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* D I G I T H E C T */}
-            <text x="75" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">D</text>
-            <text x="126" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">I</text>
-            <text x="160" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">G</text>
-            <text x="215" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">I</text>
-            <text x="250" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">T</text>
-            <text x="296" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">H</text>
+            <text x="75" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">D</text>
+            <text x="126" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">I</text>
+            <text x="160" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">G</text>
+            <text x="215" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">I</text>
+            <text x="250" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">T</text>
+            <text x="296" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">H</text>
 
             {/* Architectural 'E' (3 Horizontal Bars) */}
             <g id="architectural-e">
@@ -266,8 +266,8 @@ export default function AnimatedDigithectLogo({
               <rect x="345" y="414" width="24" height="4.5" rx="1" fill="url(#goldWordmark)" />
             </g>
 
-            <text x="386" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">C</text>
-            <text x="432" y="415" fontFamily="'Outfit', sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">T</text>
+            <text x="386" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">C</text>
+            <text x="432" y="415" fontFamily="'Inter', -apple-system, sans-serif" fontWeight="700" fontSize="38" letterSpacing="0.22em" fill="url(#goldWordmark)">T</text>
 
             {/* Subtitle */}
             <line x1="65" y1="452" x2="115" y2="452" stroke="#D4A737" strokeWidth="1.2" opacity="0.65" />
@@ -275,10 +275,10 @@ export default function AnimatedDigithectLogo({
               x="250"
               y="456"
               textAnchor="middle"
-              fontFamily="'Outfit', sans-serif"
-              fontWeight="500"
-              fontSize="15"
-              letterSpacing="0.45em"
+              fontFamily="'Inter', -apple-system, sans-serif"
+              fontWeight="600"
+              fontSize="14"
+              letterSpacing="0.38em"
               fill="#EAD293"
             >
               SOFTWARE SERVICES

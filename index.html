@@ -7,10 +7,10 @@
   <meta name="description" content="Digithect Software Services - High-performance enterprise systems, cloud architecture, and bespoke AI solutions.">
   <link rel="icon" type="image/jpeg" href="./digithect-logo.jpg">
 
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -36,8 +36,9 @@
             }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Outfit"', 'sans-serif'],
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            display: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace'],
           }
         }
       }
@@ -46,9 +47,12 @@
 
   <style>
     body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: #030406;
       color: #e2e8f0;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Ambient Gold Radial Glow */
@@ -308,10 +312,10 @@
         </svg>
       </div>
       <div class="flex flex-col">
-        <span class="text-xs font-bold tracking-[0.25em] font-display text-white/95 group-hover:text-gold-300 transition-colors">
+        <span class="text-xs font-semibold tracking-[0.25em] text-white/95 group-hover:text-gold-300 transition-colors">
           DIGITHECT
         </span>
-        <span class="text-[8px] font-mono tracking-widest text-slate-500 hidden sm:inline">
+        <span class="text-[9px] font-medium tracking-[0.15em] text-slate-400 hidden sm:inline">
           SOFTWARE SERVICES
         </span>
       </div>
@@ -326,7 +330,7 @@
         Services
       </button>
       <button onclick="navigateToPage('projects')" data-nav="projects" class="nav-item px-3 py-1.5 rounded-lg font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent">
-        Projects (4 Spaces)
+        Projects
       </button>
       <button onclick="navigateToPage('about')" data-nav="about" class="nav-item px-3 py-1.5 rounded-lg font-medium transition-all text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent">
         About
@@ -338,22 +342,24 @@
 
     <!-- Right CTA & Mobile Hamburger -->
     <div class="flex items-center gap-2.5 sm:gap-3">
-      <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-gold-500/20 via-gold-400/20 to-gold-500/20 border border-gold-500/40 text-gold-300 hover:text-white hover:border-gold-400 text-xs font-medium font-mono tracking-wider transition-all">
+      <button onclick="openModal()" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-gold-500/20 via-gold-400/20 to-gold-500/20 border border-gold-500/40 text-gold-300 hover:text-white hover:border-gold-400 text-xs font-medium tracking-wide transition-all">
         <span>Consultation</span>
         <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
       </button>
 
-      <!-- Animated 3-Bar Hamburger Trigger -->
+      <!-- Minimalist Mobile Hamburger Trigger -->
       <button 
         id="mobile-hamburger-btn" 
         onclick="toggleMobileNav()" 
-        class="md:hidden relative w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/25 hover:border-gold-500/50 flex flex-col items-center justify-center gap-1.5 p-2 transition-all active:scale-95" 
-        aria-label="Toggle Navigation Menu"
+        class="md:hidden p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 active:scale-95 transition-all focus:outline-none" 
+        aria-label="Toggle navigation menu"
         aria-expanded="false"
       >
-        <span id="ham-bar-1" class="w-5 h-0.5 bg-gold-300 rounded-full transition-all duration-300 origin-center pointer-events-none"></span>
-        <span id="ham-bar-2" class="w-3.5 h-0.5 bg-gold-400 rounded-full transition-all duration-300 pointer-events-none"></span>
-        <span id="ham-bar-3" class="w-5 h-0.5 bg-gold-300 rounded-full transition-all duration-300 origin-center pointer-events-none"></span>
+        <div class="w-5 h-4 flex flex-col justify-between items-center pointer-events-none">
+          <span id="ham-bar-1" class="w-5 h-[1.5px] bg-slate-200 rounded-full transition-all duration-300 origin-center"></span>
+          <span id="ham-bar-2" class="w-5 h-[1.5px] bg-slate-200 rounded-full transition-all duration-200"></span>
+          <span id="ham-bar-3" class="w-5 h-[1.5px] bg-slate-200 rounded-full transition-all duration-300 origin-center"></span>
+        </div>
       </button>
     </div>
   </header>
@@ -365,118 +371,101 @@
   <div 
     id="mobile-nav-backdrop" 
     onclick="closeMobileNav()" 
-    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
+    class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"
     aria-hidden="true"
   ></div>
 
   <!-- Slide-In Drawer from Right -->
   <aside 
     id="mobile-nav-drawer" 
-    class="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm z-50 bg-[#07090e] border-l border-gold-500/25 p-6 flex flex-col justify-between shadow-2xl shadow-gold-500/10 translate-x-full transition-transform duration-300 ease-out md:hidden overflow-y-auto"
+    class="fixed top-0 right-0 bottom-0 w-[80%] max-w-xs z-50 bg-[#080a0f] border-l border-white/10 p-6 flex flex-col justify-between shadow-2xl translate-x-full transition-transform duration-300 ease-out md:hidden overflow-y-auto"
     aria-label="Mobile Navigation Drawer"
   >
     <!-- Drawer Header & Navigation -->
     <div>
-      <div class="flex items-center justify-between pb-5 border-b border-slate-800/80">
+      <div class="flex items-center justify-between pb-5 border-b border-white/10">
         <div class="flex items-center gap-2.5">
-          <div class="w-7 h-7 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center">
-            <span class="text-xs font-bold text-gold-400 font-display">D</span>
+          <div class="w-7 h-7 rounded-lg bg-gold-500/10 border border-gold-500/25 flex items-center justify-center">
+            <svg viewBox="0 0 100 100" class="w-4 h-4">
+              <polygon points="28,80 28,62 36,54 36,80" fill="#E6C875" />
+              <polygon points="40,80 40,46 48,38 48,80" fill="#DFBD67" />
+              <path d="M 52 80 L 52 35 L 45 31 L 49 24 L 60 18 L 60 80 Z" fill="#F3E5AB" />
+              <path d="M 60 14 C 80 26, 92 42, 86 58 C 82 69, 72 78, 60 78 C 66 73, 72 65, 74 54 C 76 43, 70 32, 60 26 Z" fill="#D4A737" />
+            </svg>
           </div>
-          <div>
-            <span class="text-xs font-bold font-display tracking-[0.25em] text-white">DIGITHECT</span>
-            <div class="text-[9px] font-mono text-gold-400/80 tracking-wider">SOVEREIGN SOFTWARE</div>
-          </div>
+          <span class="text-xs font-semibold tracking-[0.2em] text-white">DIGITHECT</span>
         </div>
         <button 
           onclick="closeMobileNav()" 
-          class="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors active:scale-95"
+          class="p-2 -mr-2 text-slate-400 hover:text-white rounded-lg hover:bg-white/5 transition-colors"
           aria-label="Close Navigation"
         >
-          <i data-lucide="x" class="w-4 h-4 text-slate-300"></i>
+          <i data-lucide="x" class="w-5 h-5"></i>
         </button>
       </div>
 
-      <!-- Nav Links with Architectural Numbering -->
-      <div class="mt-6 flex flex-col gap-2">
+      <!-- Navigation Links -->
+      <nav class="mt-6 flex flex-col gap-1">
         <button 
           onclick="handleMobileNavClick('home')" 
           data-mob-nav="home"
-          class="mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-gold-300 bg-gold-500/10 border border-gold-500/30 text-left"
+          class="mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-gold-300 bg-gold-500/10 border border-gold-500/20 text-left"
         >
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] text-gold-400/70">01 //</span>
-            <span class="text-sm font-display font-bold">Home</span>
-          </div>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-400"></i>
+          <span>Home</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-gold-400/80"></i>
         </button>
 
         <button 
           onclick="handleMobileNavClick('services')" 
           data-mob-nav="services"
-          class="mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-900/80 border border-transparent text-left"
+          class="mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-white/[0.04] border border-transparent text-left"
         >
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] text-slate-500">02 //</span>
-            <span class="text-sm font-display font-bold">Services</span>
-          </div>
+          <span>Services</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
         </button>
 
         <button 
           onclick="handleMobileNavClick('projects')" 
           data-mob-nav="projects"
-          class="mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-900/80 border border-transparent text-left"
+          class="mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-white/[0.04] border border-transparent text-left"
         >
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] text-slate-500">03 //</span>
-            <span class="text-sm font-display font-bold">Projects (4 Spaces)</span>
-          </div>
+          <span>Projects</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
         </button>
 
         <button 
           onclick="handleMobileNavClick('about')" 
           data-mob-nav="about"
-          class="mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-900/80 border border-transparent text-left"
+          class="mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-white/[0.04] border border-transparent text-left"
         >
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] text-slate-500">04 //</span>
-            <span class="text-sm font-display font-bold">About</span>
-          </div>
+          <span>About</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
         </button>
 
         <button 
           onclick="handleMobileNavClick('contact')" 
           data-mob-nav="contact"
-          class="mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-900/80 border border-transparent text-left"
+          class="mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-white/[0.04] border border-transparent text-left"
         >
-          <div class="flex items-center gap-3">
-            <span class="text-[10px] text-slate-500">05 //</span>
-            <span class="text-sm font-display font-bold">Contact</span>
-          </div>
+          <span>Contact</span>
           <i data-lucide="chevron-right" class="w-4 h-4 text-slate-600"></i>
         </button>
-      </div>
+      </nav>
     </div>
 
     <!-- Drawer Footer Actions -->
-    <div class="pt-6 border-t border-slate-800/80 space-y-4">
+    <div class="pt-6 border-t border-white/10 space-y-4">
       <button 
         onclick="closeMobileNav(); openModal();" 
-        class="w-full py-3.5 rounded-xl bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-bold text-xs font-mono tracking-wider shadow-lg shadow-gold-500/20 flex items-center justify-center gap-2 hover:brightness-110 active:scale-95 transition-all"
+        class="w-full py-3 rounded-xl bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-semibold text-xs tracking-wide shadow-md shadow-gold-500/10 flex items-center justify-center gap-2 hover:brightness-105 active:scale-95 transition-all"
       >
-        <span>COMMISSION CONSULTATION</span>
+        <span>Schedule Consultation</span>
         <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
       </button>
 
-      <div class="flex items-center justify-between text-[10px] font-mono text-slate-500 pt-1">
-        <span class="flex items-center gap-1.5">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>99.999% SLA ACTIVE</span>
-        </span>
-        <span class="text-gold-400/80">SECURE // PGP</span>
-      </div>
+      <p class="text-[11px] text-slate-500 text-center tracking-normal">
+        Architectural Software Engineering
+      </p>
     </div>
   </aside>
 
@@ -606,12 +595,12 @@
 
           <!-- Typography -->
           <g class="brand-text">
-            <text x="75" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">D</text>
-            <text x="126" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">I</text>
-            <text x="160" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">G</text>
-            <text x="215" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">I</text>
-            <text x="250" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">T</text>
-            <text x="296" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">H</text>
+            <text x="75" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">D</text>
+            <text x="126" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">I</text>
+            <text x="160" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">G</text>
+            <text x="215" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">I</text>
+            <text x="250" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">T</text>
+            <text x="296" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">H</text>
 
             <g id="architectural-e">
               <rect x="345" y="388" width="24" height="4.5" rx="1" fill="url(#goldWordmark)" />
@@ -619,11 +608,11 @@
               <rect x="345" y="414" width="24" height="4.5" rx="1" fill="url(#goldWordmark)" />
             </g>
 
-            <text x="386" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">C</text>
-            <text x="432" y="415" font-family="'Outfit', sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">T</text>
+            <text x="386" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">C</text>
+            <text x="432" y="415" font-family="'Inter', -apple-system, sans-serif" font-weight="700" font-size="38" letter-spacing="0.22em" fill="url(#goldWordmark)">T</text>
 
             <line x1="65" y1="452" x2="115" y2="452" stroke="#D4A737" stroke-width="1.2" opacity="0.65" />
-            <text x="250" y="456" text-anchor="middle" font-family="'Outfit', sans-serif" font-weight="500" font-size="15" letter-spacing="0.45em" fill="#EAD293">
+            <text x="250" y="456" text-anchor="middle" font-family="'Inter', -apple-system, sans-serif" font-weight="600" font-size="14" letter-spacing="0.38em" fill="#EAD293">
               SOFTWARE SERVICES
             </text>
             <line x1="385" y1="452" x2="435" y2="452" stroke="#D4A737" stroke-width="1.2" opacity="0.65" />
@@ -668,16 +657,16 @@
       <!-- Sleek Compact Header -->
       <div class="flex items-end justify-between mb-6 sm:mb-8">
         <div>
-          <span class="text-[11px] font-mono text-gold-400 tracking-[0.25em] uppercase font-semibold">
-            WHAT WE ARCHITECT
+          <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">
+            Services & Capabilities
           </span>
           <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white tracking-tight mt-1">
             Enterprise <span class="text-gold-gradient">Software Services</span>
           </h2>
         </div>
-        <div class="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-mono">
-          <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
-          <span>Hover or tap pillar to inspect</span>
+        <div class="hidden sm:flex items-center gap-2 text-xs text-slate-400 font-medium">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+          <span>Select a discipline to explore</span>
         </div>
       </div>
 
@@ -1482,21 +1471,21 @@
       
       <!-- Page Header -->
       <div class="mb-14 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-[11px] font-mono tracking-widest text-gold-300 uppercase mb-4">
-          <i data-lucide="terminal" class="w-3.5 h-3.5 text-gold-400"></i>
-          <span>PORTFOLIO DIRECTORY // 4 ENTERPRISE SPACES</span>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-xs font-medium text-gold-300 mb-4">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>Enterprise Projects & Case Studies</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white mb-4">
           Projects & Sovereign <span class="text-gold-gradient">Architecture Spaces</span>
         </h1>
         <p class="max-w-3xl text-sm sm:text-base text-slate-400 leading-relaxed font-sans">
-          Here are the dedicated project spaces allocated for our sovereign enterprise engagements. Each space represents a battle-tested distributed architecture, private AI cluster, or post-quantum defense infrastructure engineered by Digithect.
+          Dedicated architectural spaces allocated for our sovereign enterprise engagements. Each space represents a battle-tested distributed architecture, private AI cluster, or post-quantum defense infrastructure engineered by Digithect.
         </p>
 
         <!-- Filter Bar -->
         <div class="mt-8 flex flex-wrap items-center gap-2 pt-4 border-t border-slate-900">
-          <span class="text-xs font-mono text-slate-500 uppercase tracking-wider mr-2 hidden sm:inline">Filter Spaces:</span>
-          <button onclick="filterProjectSpaces('all')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-gold-500/20 text-gold-300 border border-gold-500/40">All 4 Spaces</button>
+          <span class="text-xs font-medium text-slate-400 uppercase tracking-wider mr-2 hidden sm:inline">Filter:</span>
+          <button onclick="filterProjectSpaces('all')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-gold-500/20 text-gold-300 border border-gold-500/40">All Projects</button>
           <button onclick="filterProjectSpaces('fintech')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Fintech & Clearing</button>
           <button onclick="filterProjectSpaces('ai')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Autonomous AI</button>
           <button onclick="filterProjectSpaces('cloud')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Distributed Cloud</button>
@@ -1873,9 +1862,9 @@
 
       <!-- Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-[11px] font-mono tracking-widest text-gold-300 uppercase mb-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-xs font-medium text-gold-300 mb-4">
           <i data-lucide="compass" class="w-3.5 h-3.5 text-gold-400"></i>
-          <span>ARCHITECTURAL PROVENANCE // ABOUT DIGITHECT</span>
+          <span>Engineering Provenance</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white mb-6">
           Architecting <span class="text-gold-gradient">Sovereign Software</span> for Global Enterprises
@@ -1888,7 +1877,7 @@
       <!-- Vitruvian Triad -->
       <div class="mb-20">
         <div class="text-center mb-10">
-          <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">The Classical Foundation</span>
+          <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">The Classical Foundation</span>
           <h2 class="text-2xl sm:text-3xl font-bold font-display text-white mt-1">
             The Vitruvian Triad in Modern Software
           </h2>
@@ -2094,12 +2083,12 @@
 
       <!-- Header -->
       <div class="mb-14 text-center sm:text-left">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-[11px] font-mono tracking-widest text-gold-300 uppercase mb-4">
-          <i data-lucide="terminal" class="w-3.5 h-3.5 text-gold-400"></i>
-          <span>COMMISSION ARCHITECTURE // INITIATE DIALOGUE</span>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-xs font-medium text-gold-300 mb-4">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-gold-400"></i>
+          <span>Direct Inquiries & Commissions</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white mb-4">
-          Contact Our <span className="text-gold-gradient">Principal Architects</span>
+          Contact Our <span class="text-gold-gradient">Principal Architects</span>
         </h1>
         <p class="max-w-3xl text-sm sm:text-base text-slate-400 leading-relaxed font-sans">
           Digithect accepts a limited allocation of high-stakes enterprise commissions each quarter. Submit your technical scope below for confidential evaluation or contact our offices directly.
@@ -3009,11 +2998,11 @@
       document.querySelectorAll('.mob-nav-link').forEach(btn => {
         const nav = btn.getAttribute('data-mob-nav');
         if (nav === pageId) {
-          btn.className = 'mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-gold-300 bg-gold-500/10 border border-gold-500/30 text-left';
+          btn.className = 'mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-gold-300 bg-gold-500/10 border border-gold-500/20 text-left';
           const icon = btn.querySelector('[data-lucide="chevron-right"]');
-          if (icon) icon.className = 'w-4 h-4 text-gold-400';
+          if (icon) icon.className = 'w-4 h-4 text-gold-400/80';
         } else {
-          btn.className = 'mob-nav-link flex items-center justify-between px-4 py-3.5 rounded-xl text-xs font-mono font-medium transition-all text-slate-300 hover:text-white hover:bg-slate-900/80 border border-transparent text-left';
+          btn.className = 'mob-nav-link flex items-center justify-between px-3.5 py-3 rounded-lg text-sm font-medium transition-all text-slate-300 hover:text-white hover:bg-white/[0.04] border border-transparent text-left';
           const icon = btn.querySelector('[data-lucide="chevron-right"]');
           if (icon) icon.className = 'w-4 h-4 text-slate-600';
         }
@@ -3068,10 +3057,9 @@
 
       // Morph 3 bars to X
       if (bar1 && bar2 && bar3) {
-        bar1.style.transform = 'translateY(6px) rotate(45deg)';
+        bar1.style.transform = 'translateY(7.25px) rotate(45deg)';
         bar2.style.opacity = '0';
-        bar2.style.transform = 'scaleX(0)';
-        bar3.style.transform = 'translateY(-6px) rotate(-45deg)';
+        bar3.style.transform = 'translateY(-7.25px) rotate(-45deg)';
       }
       if (btn) btn.setAttribute('aria-expanded', 'true');
       if (window.lucide) lucide.createIcons();
