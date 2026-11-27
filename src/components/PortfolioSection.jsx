@@ -3,59 +3,54 @@ import { Play, Pause, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const projectVideos = [
   {
-    num: "01 //",
+    tag: "FINTECH & PAYMENTS",
     cam: "CAM_01",
-    tag: "FINTECH CORE",
-    title: "Apex Global Clearing Engine",
-    metric: "< 0.6ms P99",
+    title: "Instant Mobile Banking & Payment App",
+    metric: "Under 1 Sec",
     progress: "w-2/3",
     tc: "00:01:24:18",
-    badge: "FINTECH // 4K 60FPS",
-    desc: "Sub-millisecond high-frequency clearing engine with zero-knowledge cryptographic verification."
+    badge: "FINTECH & PAYMENTS",
+    desc: "Modern financial app allowing customers to transfer money instantly with biometric Face ID security."
   },
   {
-    num: "02 //",
+    tag: "AI & AUTOMATION",
     cam: "CAM_02",
-    tag: "AUTONOMOUS AI",
-    title: "Synapse Sovereign Neural Core",
-    metric: "140M Vectors",
+    title: "Smart AI Customer Support Agent",
+    metric: "Instant Reply",
     progress: "w-4/5",
     tc: "00:03:45:09",
-    badge: "AI // 4K 60FPS",
-    desc: "Air-gapped 3D neural node cluster executing private autonomous reasoning with zero data leakage."
+    badge: "AI & AUTOMATION",
+    desc: "Private AI assistant trained on business docs to resolve support tickets and answer questions 24/7."
   },
   {
-    num: "03 //",
+    tag: "E-COMMERCE & CLOUD",
     cam: "CAM_03",
-    tag: "CLOUD FABRIC",
-    title: "Helios Multi-Region Cloud",
-    metric: "42M RPS",
+    title: "High-Traffic Online Shopping Store",
+    metric: "0.4s Page Load",
     progress: "w-1/2",
     tc: "00:07:12:33",
-    badge: "CLOUD // 4K 60FPS",
-    desc: "Planet-scale sovereign cloud fabric with active-active geo-routing across 14 enterprise regions."
+    badge: "CLOUD & E-COMMERCE",
+    desc: "Fast e-commerce shopping platform built for major sales spikes without crashing, featuring 1-click checkout."
   },
   {
-    num: "04 //",
+    tag: "HEALTHCARE PORTAL",
     cam: "CAM_04",
-    tag: "POST-QUANTUM",
-    title: "Fortress Zero-Trust Defense",
-    metric: "0 Breach SLA",
+    title: "Secure Patient & Doctor Portal",
+    metric: "HIPAA Compliant",
     progress: "w-3/4",
     tc: "00:11:08:21",
-    badge: "SECURITY // 4K 60FPS",
-    desc: "Post-quantum cryptographic mesh with mutual TLS microsegmentation and automated threat mitigation."
+    badge: "HEALTHCARE & SECURITY",
+    desc: "Secure patient web portal enabling thousands of patients to book visits and view lab results securely."
   },
   {
-    num: "05 //",
+    tag: "MODERNIZATION",
     cam: "CAM_05",
-    tag: "DE-MONOLITHING",
-    title: "Titan Core Banking Bus",
-    metric: "18.4 GB/s",
+    title: "Custom Business Platform Upgrade",
+    metric: "24/7 Reliability",
     progress: "w-full",
     tc: "00:15:30:04",
-    badge: "MODERNIZATION // 4K 60FPS",
-    desc: "Strangler-fig event stream architecture transforming monolithic mainframes into event-driven services."
+    badge: "MODERNIZATION",
+    desc: "Modern API architecture replacing outdated software systems with fast, responsive cloud applications."
   }
 ];
 
@@ -200,7 +195,7 @@ export default function PortfolioSection({ onOpenConsultation }) {
             <div className="flex items-center gap-2 mb-1.5">
               <span className="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
               <span className="text-[11px] font-mono text-gold-400 tracking-[0.25em] uppercase font-semibold">
-                OUR PORTFOLIO // 5 PRODUCTION REELS
+                CLIENT SHOWCASE & INTERACTIVE DEMOS
               </span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white tracking-tight">
@@ -299,7 +294,7 @@ export default function PortfolioSection({ onOpenConsultation }) {
                   : 'bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white'
               }`}
             >
-              {p.num} {p.tag.split(' ')[0]}
+              {p.tag}
             </button>
           ))}
         </div>

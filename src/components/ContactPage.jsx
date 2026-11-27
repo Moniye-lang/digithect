@@ -23,9 +23,9 @@ export default function ContactPage() {
     enterprise: '',
     email: '',
     phone: '',
-    domain: 'Fintech Core & Settlement Systems',
-    scale: '1M+ RPS // High Concurrency',
-    timeline: 'Q1-Q2 Immediate Commission',
+    domain: 'Custom Web & Mobile Applications',
+    scale: 'Growing Business (10k - 100k Users)',
+    timeline: 'Immediate (Within 1-2 Months)',
     scope: '',
     requireNda: true
   });
@@ -72,9 +72,9 @@ export default function ContactPage() {
       enterprise: '',
       email: '',
       phone: '',
-      domain: 'Fintech Core & Settlement Systems',
-      scale: '1M+ RPS // High Concurrency',
-      timeline: 'Q1-Q2 Immediate Commission',
+      domain: 'Custom Web & Mobile Applications',
+      scale: 'Growing Business (10k - 100k Users)',
+      timeline: 'Immediate (Within 1-2 Months)',
       scope: '',
       requireNda: true
     });
@@ -92,7 +92,7 @@ export default function ContactPage() {
         <div className="mb-14 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-[11px] font-mono tracking-widest text-gold-300 uppercase mb-4">
             <Terminal className="w-3.5 h-3.5 text-gold-400" />
-            <span>COMMISSION ARCHITECTURE // INITIATE DIALOGUE</span>
+            <span>DIRECT INQUIRIES & COMMISSIONS</span>
           </div>
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white mb-4">
             Contact Our <span className="text-gold-gradient">Principal Architects</span>
@@ -214,12 +214,11 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-sm text-slate-100 transition-colors"
                       >
-                        <option value="Fintech Core & Settlement Systems">Fintech Core & Settlement Systems</option>
-                        <option value="Bespoke AI & Autonomous Agent Platforms">Bespoke AI & Autonomous Agent Platforms</option>
-                        <option value="Enterprise Cloud & Distributed Systems">Enterprise Cloud & Distributed Systems</option>
-                        <option value="Zero-Trust Cybersecurity Architecture">Zero-Trust Cybersecurity Architecture</option>
-                        <option value="Core De-Monolithing & Transformation">Core De-Monolithing & Transformation</option>
-                        <option value="Custom Project Space / Architecture Review">Custom Project Space / Architecture Review</option>
+                        <option value="Custom Web & Mobile Applications">Custom Web & Mobile Applications</option>
+                        <option value="AI Tools & Business Automation">AI Tools & Business Automation</option>
+                        <option value="Payment Processing & E-Commerce">Payment Processing & E-Commerce</option>
+                        <option value="Cloud Hosting, Security & Maintenance">Cloud Hosting, Security & Maintenance</option>
+                        <option value="Custom Software Architecture Consultation">Custom Software Architecture Consultation</option>
                       </select>
                     </div>
                   </div>
@@ -228,7 +227,7 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">
-                        Throughput Envelope / Scale
+                        Project Scope / Company Size
                       </label>
                       <select
                         name="scale"
@@ -236,10 +235,10 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-sm text-slate-100 transition-colors"
                       >
-                        <option value="100K RPS // Mid-Tier Distributed">100K RPS // Mid-Tier Distributed</option>
-                        <option value="1M+ RPS // High Concurrency">1M+ RPS // High Concurrency</option>
-                        <option value="10M+ RPS // Planet-Scale Mesh">10M+ RPS // Planet-Scale Mesh</option>
-                        <option value="Sub-millisecond Latency Specialized">Sub-millisecond Latency Specialized</option>
+                        <option value="Startup / New MVP Launch">Startup / New MVP Launch</option>
+                        <option value="Growing Business (10k - 100k Users)">Growing Business (10k - 100k Users)</option>
+                        <option value="Established Business / High-Volume">Established Business / High-Volume</option>
+                        <option value="System Upgrade & Redesign">System Upgrade & Redesign</option>
                       </select>
                     </div>
                     <div>
@@ -252,10 +251,10 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-sm text-slate-100 transition-colors"
                       >
-                        <option value="Q1-Q2 Immediate Commission">Q1-Q2 Immediate Commission</option>
-                        <option value="Emergency Forensics / System Incident">Emergency Forensics / System Incident</option>
-                        <option value="Upcoming Fiscal Strategic Overhaul">Upcoming Fiscal Strategic Overhaul</option>
-                        <option value="Exploratory Architecture Audit">Exploratory Architecture Audit</option>
+                        <option value="Immediate (Within 1-2 Months)">Immediate (Within 1-2 Months)</option>
+                        <option value="Next Quarter (2-4 Months)">Next Quarter (2-4 Months)</option>
+                        <option value="Planning / Exploration Stage">Planning / Exploration Stage</option>
+                        <option value="Urgent Fix or Maintenance">Urgent Fix or Maintenance</option>
                       </select>
                     </div>
                   </div>
@@ -315,13 +314,13 @@ export default function ContactPage() {
 
                   <div>
                     <div className="text-xs font-mono text-gold-400 uppercase tracking-widest mb-1">
-                      DOCKET RECORDED // PRINCIPAL ASSIGNED
+                      INQUIRY RECORDED - TEAM ASSIGNED
                     </div>
                     <h3 className="text-2xl sm:text-3xl font-bold font-display text-white mb-2">
                       Inquiry Successfully Received
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-                      Thank you, <strong className="text-white">{formData.name}</strong> from <strong className="text-white">{formData.enterprise}</strong>. Your technical scope has been encrypted and routed directly to our Principal Software Architect.
+                      Thank you, <strong className="text-white">{formData.name}</strong> from <strong className="text-white">{formData.enterprise}</strong>. Your project requirements have been safely received and routed directly to our senior software architects. We will be in touch within 24 hours.
                     </p>
                   </div>
 
@@ -418,7 +417,7 @@ export default function ContactPage() {
                     <div className="font-bold text-white">Zurich (Headquarters)</div>
                     <div className="text-slate-400 text-[11px]">Bahnhofstrasse Financial District</div>
                   </div>
-                  <span className="font-mono text-[10px] text-gold-400/90">CET // UTC+1</span>
+                  <span className="font-mono text-[10px] text-gold-400/90">CET Timezone</span>
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-black/40 border border-slate-800/80 flex items-center justify-between">
@@ -426,7 +425,7 @@ export default function ContactPage() {
                     <div className="font-bold text-white">London Engineering Hub</div>
                     <div className="text-slate-400 text-[11px]">Mayfair Engineering House</div>
                   </div>
-                  <span className="font-mono text-[10px] text-gold-400/90">GMT // UTC+0</span>
+                  <span className="font-mono text-[10px] text-gold-400/90">GMT Timezone</span>
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-black/40 border border-slate-800/80 flex items-center justify-between">
@@ -434,7 +433,7 @@ export default function ContactPage() {
                     <div className="font-bold text-white">New York Cloud Directorate</div>
                     <div className="text-slate-400 text-[11px]">Wall Street Tower Suite</div>
                   </div>
-                  <span className="font-mono text-[10px] text-gold-400/90">EST // UTC-5</span>
+                  <span className="font-mono text-[10px] text-gold-400/90">EST Timezone</span>
                 </div>
 
                 <div className="p-3.5 rounded-lg bg-black/40 border border-slate-800/80 flex items-center justify-between">
@@ -442,7 +441,7 @@ export default function ContactPage() {
                     <div className="font-bold text-white">Singapore AI Gateway</div>
                     <div className="text-slate-400 text-[11px]">Marina Bay Financial Center</div>
                   </div>
-                  <span className="font-mono text-[10px] text-gold-400/90">SGT // UTC+8</span>
+                  <span className="font-mono text-[10px] text-gold-400/90">SGT Timezone</span>
                 </div>
               </div>
             </div>

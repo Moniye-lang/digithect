@@ -1,62 +1,58 @@
 import React, { useState } from 'react';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ArrowRight, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 const bladesData = [
   {
-    num: "01 //",
-    tag: "CLOUD FABRIC",
-    collapsedTitle: "Distributed\nCloud",
-    metricBadge: "99.999%",
-    mobileTitle: "Distributed Cloud Fabric",
-    title: "Enterprise Cloud & Distributed Systems",
-    subtitle: "Active-Active",
-    desc: "Self-healing multi-region backbones engineered for tens of millions of concurrent requests with 99.999% SLA availability and zero-downtime rollouts.",
-    tags: ["Active-Active Geo", "Immutable IaC", "<15ms P99 Latency"],
-    scope: "Enterprise Cloud & Distributed Systems",
-    metricLabel: "SLA:",
-    metricVal: "99.999%"
+    id: "web-mobile-apps",
+    tag: "Custom Applications",
+    collapsedTitle: "Web & Mobile\nApps",
+    badge: "Web & Mobile",
+    mobileTitle: "Custom Web & Mobile Apps",
+    title: "Custom Web & Mobile Applications",
+    subtitle: "Built for All Devices",
+    desc: "We design and build fast, modern websites, web applications, and mobile apps tailored specifically to your business. Easy for your customers to use, beautiful on every screen, and engineered to never slow down.",
+    tags: ["Custom Websites", "iOS & Android Apps", "Customer Portals", "Fast Loading Speed"],
+    scope: "Custom Web & Mobile Applications",
+    benefit: "100% Mobile & Desktop Friendly"
   },
   {
-    num: "02 //",
-    tag: "NEURAL SYSTEMS",
-    collapsedTitle: "Bespoke\nAI Core",
-    metricBadge: "Air-Gapped",
-    mobileTitle: "Bespoke AI Platforms",
-    title: "Bespoke AI & Autonomous Agent Platforms",
-    subtitle: "Zero Data Leakage",
-    desc: "Private neural engines, fine-tuned domain models, high-speed vector retrieval, and autonomous agent loops that execute air-gapped on your sovereign servers.",
-    tags: ["Private Weights", "High-Speed Vectors", "SOC2 Type II"],
-    scope: "Bespoke AI & Autonomous Agent Platforms",
-    metricLabel: "ACCURACY:",
-    metricVal: "99.4%"
+    id: "ai-automation",
+    tag: "Smart Automation",
+    collapsedTitle: "AI Tools &\nAutomation",
+    badge: "AI Powered",
+    mobileTitle: "Smart AI & Automation",
+    title: "AI Tools & Business Workflow Automation",
+    subtitle: "Save Hours Every Week",
+    desc: "Cut down manual busywork with custom AI helpers. We build smart chatbots that answer customer questions 24/7, automate document processing, and connect your business tools so routine tasks run by themselves.",
+    tags: ["AI Customer Support", "Task Automation", "Document Processing", "100% Private Data"],
+    scope: "AI Tools & Business Workflow Automation",
+    benefit: "Saves Time & Eliminates Repetitive Work"
   },
   {
-    num: "03 //",
-    tag: "SETTLEMENT",
-    collapsedTitle: "Fintech\nCore",
-    metricBadge: "< 0.8ms",
-    mobileTitle: "Fintech Core & Ledgers",
-    title: "Fintech Core & Settlement Systems",
-    subtitle: "Bank-Grade SLA",
-    desc: "Ultra-low latency transaction engines, immutable double-entry ledgers, zero-knowledge verification, and bank-grade settlement executing at hardware speed.",
-    tags: ["Hardware Crypto Signing", "Real-Time AML", "PCI-DSS L1"],
-    scope: "Fintech Core & Settlement Systems",
-    metricLabel: "LATENCY:",
-    metricVal: "< 0.8ms"
+    id: "payment-ecommerce",
+    tag: "Payments & Commerce",
+    collapsedTitle: "Payments &\nBilling",
+    badge: "Secure Checkout",
+    mobileTitle: "Payments & E-Commerce",
+    title: "Online Payments & E-Commerce Systems",
+    subtitle: "Safe, Instant Transactions",
+    desc: "Accept payments from customers anywhere in the world effortlessly. We connect credit card processors, digital wallets, automatic subscription renewals, and digital invoicing directly into your bank account.",
+    tags: ["Credit Card Processing", "Apple Pay & Google Pay", "Monthly Subscriptions", "Automated Invoices"],
+    scope: "Online Payments & E-Commerce Systems",
+    benefit: "Bank-Grade Encryption & Instant Payouts"
   },
   {
-    num: "04 //",
-    tag: "DEFENSE SYSTEMS",
-    collapsedTitle: "Zero-Trust\nDefense",
-    metricBadge: "ISO 27001",
-    mobileTitle: "Zero-Trust Defense",
-    title: "Zero-Trust Cybersecurity Architecture",
-    subtitle: "Post-Quantum",
-    desc: "Continuous cryptographic authentication, mutual TLS microservice isolation, automated code-level threat triage, and post-quantum key encapsulation.",
-    tags: ["Post-Quantum Keys", "mTLS Mesh", "Zero Breach SLA"],
-    scope: "Zero-Trust Cybersecurity Architecture",
-    metricLabel: "COMPLIANCE:",
-    metricVal: "ISO 27001"
+    id: "cloud-maintenance",
+    tag: "Cloud & Support",
+    collapsedTitle: "Hosting &\nSecurity",
+    badge: "24/7 Care",
+    mobileTitle: "Hosting & Maintenance",
+    title: "Cloud Hosting, Security & Ongoing Support",
+    subtitle: "Complete Peace of Mind",
+    desc: "We look after your software so you can focus on running your business. Includes high-speed cloud hosting, protection against hackers and malware, automatic daily backups, and prompt technical support whenever you need help.",
+    tags: ["Fast Cloud Hosting", "Anti-Hacker Defense", "Daily Backups", "24/7 Ongoing Support"],
+    scope: "Cloud Hosting, Security & Ongoing Support",
+    benefit: "Continuous Monitoring & Daily Backups"
   }
 ];
 
@@ -70,16 +66,16 @@ export default function ServicesSection({ onOpenConsultation }) {
         {/* Sleek Compact Header */}
         <div className="flex items-end justify-between mb-6 sm:mb-8">
           <div>
-            <span className="text-[11px] font-mono text-gold-400 tracking-[0.25em] uppercase font-semibold">
-              WHAT WE ARCHITECT
+            <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">
+              Services & What We Build
             </span>
-            <h2 className="text-2xl sm:text-3xl font-extrabold font-display text-white tracking-tight mt-1">
-              Enterprise <span className="text-gold-gradient">Software Services</span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1">
+              Software Built for <span className="text-gold-gradient">Your Business</span>
             </h2>
           </div>
-          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-500 font-mono">
-            <span className="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
-            <span>Hover or tap pillar to inspect</span>
+          <div className="hidden sm:flex items-center gap-2 text-xs text-slate-400 font-medium">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold-400"></span>
+            <span>Tap any service to explore</span>
           </div>
         </div>
 
@@ -90,7 +86,7 @@ export default function ServicesSection({ onOpenConsultation }) {
 
             return (
               <div
-                key={blade.num}
+                key={blade.id}
                 onClick={() => setActiveIndex(idx)}
                 onMouseEnter={() => {
                   if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
@@ -106,11 +102,14 @@ export default function ServicesSection({ onOpenConsultation }) {
                 {/* Mobile Bar for Inactive State */}
                 {!isActive && (
                   <div className="flex lg:hidden items-center justify-between w-full">
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-mono font-bold text-gold-400">{blade.num}</span>
-                      <span className="text-xs font-bold font-display text-white">{blade.mobileTitle}</span>
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-2 h-2 rounded-full bg-gold-400/80"></span>
+                      <span className="text-sm font-semibold text-white">{blade.mobileTitle}</span>
                     </div>
-                    <span className="text-[10px] font-mono text-gold-300/80">{blade.metricBadge} ↓</span>
+                    <span className="text-xs text-slate-400 flex items-center gap-1">
+                      <span>Explore</span>
+                      <ChevronRight className="w-3.5 h-3.5 text-gold-400" />
+                    </span>
                   </div>
                 )}
 
@@ -118,17 +117,18 @@ export default function ServicesSection({ onOpenConsultation }) {
                 {!isActive && (
                   <div className="hidden lg:flex absolute inset-0 flex-col justify-between p-5">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-mono font-bold tracking-widest text-gold-400">{blade.num}</span>
+                      <span className="px-2 py-0.5 rounded-md bg-gold-500/10 border border-gold-500/20 text-[10px] font-medium text-gold-300">
+                        {blade.badge}
+                      </span>
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
                     </div>
                     <div className="my-auto py-4">
-                      <div className="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-500 mb-1">DISCIPLINE</div>
-                      <h3 className="text-base font-bold font-display text-white leading-snug whitespace-pre-line">
+                      <h3 className="text-base font-bold text-white leading-snug whitespace-pre-line">
                         {blade.collapsedTitle}
                       </h3>
                     </div>
-                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                      <span className="text-gold-300">{blade.metricBadge}</span>
+                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                      <span>View details</span>
                       <ChevronRight className="w-3.5 h-3.5 text-gold-400" />
                     </div>
                   </div>
@@ -139,42 +139,43 @@ export default function ServicesSection({ onOpenConsultation }) {
                   <div className="relative z-10 w-full h-full flex flex-col justify-between animate-fadeIn">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-xs font-mono font-bold tracking-widest text-gold-400">
-                          {blade.num} {blade.tag}
+                        <span className="text-xs font-semibold tracking-wider text-gold-400 uppercase">
+                          {blade.tag}
                         </span>
-                        <span className="px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-[10px] font-mono text-gold-300">
+                        <span className="px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-medium text-gold-300">
                           {blade.subtitle}
                         </span>
                       </div>
-                      <h3 className="text-lg sm:text-xl font-bold font-display text-white">
+                      <h3 className="text-lg sm:text-xl font-bold text-white">
                         {blade.title}
                       </h3>
-                      <p className="text-slate-300 text-xs leading-relaxed mt-2 max-w-lg">
+                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2 max-w-xl">
                         {blade.desc}
                       </p>
                       <div className="flex flex-wrap gap-1.5 mt-3">
                         {blade.tags.map((t) => (
-                          <span key={t} className="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">
+                          <span key={t} className="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">
                             {t}
                           </span>
                         ))}
                       </div>
                     </div>
 
-                    <div className="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between">
+                    <div className="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between flex-wrap gap-3">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           if (onOpenConsultation) onOpenConsultation(blade.scope);
                         }}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-md transition-all"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-105 shadow-md active:scale-95 transition-all"
                       >
-                        <span>Commission Architecture</span>
+                        <span>Discuss This Service</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
-                      <span className="text-[11px] font-mono text-slate-400 hidden sm:inline">
-                        {blade.metricLabel} <strong className="text-gold-300">{blade.metricVal}</strong>
-                      </span>
+                      <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>{blade.benefit}</span>
+                      </div>
                     </div>
                   </div>
                 )}

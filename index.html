@@ -673,7 +673,7 @@
       <!-- Low-Profile Architectural Blades Container (Height 330px on desktop) -->
       <div id="blades-container" class="flex flex-col lg:flex-row gap-3">
         
-        <!-- BLADE 01: Distributed Cloud -->
+        <!-- BLADE 01: Web & Mobile Apps -->
         <div 
           onclick="activateBlade(0)" 
           onmouseenter="handleBladeHover(0)"
@@ -681,237 +681,294 @@
         >
           <!-- Mobile Collapsed Strip -->
           <div class="mobile-bar flex items-center justify-between w-full">
-            <div class="flex items-center gap-3">
-              <span class="text-xs font-mono font-bold text-gold-400">01 //</span>
-              <span class="text-xs font-bold font-display text-white">Distributed Cloud Fabric</span>
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-gold-400/80"></span>
+              <span class="text-sm font-semibold text-white">Custom Web & Mobile Apps</span>
             </div>
-            <span class="text-[10px] font-mono text-gold-300/80">99.999% SLA ↓</span>
+            <span class="text-xs text-slate-400 flex items-center gap-1">
+              <span>Explore</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
+            </span>
           </div>
 
-          <!-- Desktop Collapsed View (Slim Monolithic Pillar) -->
+          <!-- Desktop Collapsed View -->
           <div class="blade-collapsed absolute inset-0 flex flex-col justify-between p-5 hidden lg:flex">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold tracking-widest text-gold-400">01 //</span>
-              <span class="w-1.5 h-1.5 rounded-full bg-gold-400/60"></span>
+              <span class="px-2 py-0.5 rounded-md bg-gold-500/10 border border-gold-500/20 text-[10px] font-medium text-gold-300">
+                Web & Mobile
+              </span>
+              <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
             <div class="my-auto py-4">
-              <div class="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-500 mb-1">DISCIPLINE</div>
-              <h3 class="text-base font-bold font-display text-white leading-snug">
-                Distributed<br>Cloud
+              <h3 class="text-base font-bold text-white leading-snug">
+                Web & Mobile<br>Apps
               </h3>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-              <span class="text-gold-300">99.999%</span>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span>View details</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
             </div>
           </div>
 
-          <!-- Expanded View (Full Capabilities) -->
+          <!-- Expanded View -->
           <div class="blade-expanded relative z-10 w-full h-full flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono font-bold tracking-widest text-gold-400">01 // CLOUD FABRIC</span>
-                <span class="px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-[10px] font-mono text-gold-300">Active-Active</span>
+                <span class="text-xs font-semibold tracking-wider text-gold-400 uppercase">
+                  Custom Applications
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-medium text-gold-300">
+                  Built for All Devices
+                </span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-display text-white">
-                Enterprise Cloud & Distributed Systems
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Custom Web & Mobile Applications
               </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mt-2 max-w-lg">
-                Self-healing multi-region backbones engineered for tens of millions of concurrent requests with 99.999% SLA availability and zero-downtime rollouts.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2 max-w-xl">
+                We design and build fast, modern websites, web applications, and mobile apps tailored specifically to your business. Easy for your customers to use, beautiful on every screen, and engineered to never slow down.
               </p>
               <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Active-Active Geo</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Immutable IaC</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">&lt;15ms P99 Latency</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Custom Websites</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">iOS & Android Apps</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Customer Portals</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Fast Loading Speed</span>
               </div>
             </div>
 
-            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between">
-              <button onclick="openModal('Enterprise Cloud & Distributed Systems')" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-md transition-all">
-                <span>Commission Architecture</span>
+            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between flex-wrap gap-3">
+              <button onclick="openModal('Custom Web & Mobile Applications')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-105 shadow-md active:scale-95 transition-all">
+                <span>Discuss This Service</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <span class="text-[11px] font-mono text-slate-400 hidden sm:inline">SLA: <strong class="text-gold-300">99.999%</strong></span>
+              <div class="flex items-center gap-1.5 text-xs text-slate-400">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>100% Mobile & Desktop Friendly</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- BLADE 02: Bespoke Neural AI -->
+        <!-- BLADE 02: AI Tools & Automation -->
         <div 
           onclick="activateBlade(1)" 
           onmouseenter="handleBladeHover(1)"
           class="compact-blade relative rounded-2xl p-5 lg:p-6 border border-slate-800/80 bg-[#06080d] hover:border-gold-500/50 overflow-hidden cursor-pointer flex flex-col justify-between"
         >
+          <!-- Mobile Bar for Inactive State -->
           <div class="mobile-bar flex items-center justify-between w-full">
-            <div class="flex items-center gap-3">
-              <span class="text-xs font-mono font-bold text-gold-400">02 //</span>
-              <span class="text-xs font-bold font-display text-white">Bespoke AI Platforms</span>
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-gold-400/80"></span>
+              <span class="text-sm font-semibold text-white">Smart AI & Automation</span>
             </div>
-            <span class="text-[10px] font-mono text-gold-300/80">Air-Gapped Core ↓</span>
+            <span class="text-xs text-slate-400 flex items-center gap-1">
+              <span>Explore</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
+            </span>
           </div>
 
+          <!-- Desktop Collapsed View -->
           <div class="blade-collapsed absolute inset-0 flex flex-col justify-between p-5 hidden lg:flex">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold tracking-widest text-gold-400">02 //</span>
+              <span class="px-2 py-0.5 rounded-md bg-gold-500/10 border border-gold-500/20 text-[10px] font-medium text-gold-300">
+                AI Powered
+              </span>
               <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
             <div class="my-auto py-4">
-              <div class="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-500 mb-1">DISCIPLINE</div>
-              <h3 class="text-base font-bold font-display text-white leading-snug">
-                Bespoke<br>AI Core
+              <h3 class="text-base font-bold text-white leading-snug">
+                AI Tools &<br>Automation
               </h3>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-              <span class="text-gold-300">Air-Gapped</span>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span>View details</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
             </div>
           </div>
 
+          <!-- Expanded View -->
           <div class="blade-expanded relative z-10 w-full h-full flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono font-bold tracking-widest text-gold-400">02 // NEURAL SYSTEMS</span>
-                <span class="px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-[10px] font-mono text-gold-300">Zero Data Leakage</span>
+                <span class="text-xs font-semibold tracking-wider text-gold-400 uppercase">
+                  Smart Automation
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-medium text-gold-300">
+                  Save Hours Every Week
+                </span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-display text-white">
-                Bespoke AI & Autonomous Agent Platforms
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                AI Tools & Business Workflow Automation
               </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mt-2 max-w-lg">
-                Private neural engines, fine-tuned domain models, high-speed vector retrieval, and autonomous agent loops that execute air-gapped on your sovereign servers.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2 max-w-xl">
+                Cut down manual busywork with custom AI helpers. We build smart chatbots that answer customer questions 24/7, automate document processing, and connect your business tools so routine tasks run by themselves.
               </p>
               <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Private Weights</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">High-Speed Vectors</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">SOC2 Type II</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">AI Customer Support</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Task Automation</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Document Processing</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">100% Private Data</span>
               </div>
             </div>
 
-            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between">
-              <button onclick="openModal('Bespoke AI & Autonomous Agent Platforms')" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-md transition-all">
-                <span>Commission Architecture</span>
+            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between flex-wrap gap-3">
+              <button onclick="openModal('AI Tools & Business Workflow Automation')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-105 shadow-md active:scale-95 transition-all">
+                <span>Discuss This Service</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <span class="text-[11px] font-mono text-slate-400 hidden sm:inline">ACCURACY: <strong class="text-gold-300">99.4%</strong></span>
+              <div class="flex items-center gap-1.5 text-xs text-slate-400">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Saves Time & Eliminates Repetitive Work</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- BLADE 03: Fintech Core -->
+        <!-- BLADE 03: Payments & E-Commerce -->
         <div 
           onclick="activateBlade(2)" 
           onmouseenter="handleBladeHover(2)"
           class="compact-blade relative rounded-2xl p-5 lg:p-6 border border-slate-800/80 bg-[#06080d] hover:border-gold-500/50 overflow-hidden cursor-pointer flex flex-col justify-between"
         >
+          <!-- Mobile Bar for Inactive State -->
           <div class="mobile-bar flex items-center justify-between w-full">
-            <div class="flex items-center gap-3">
-              <span class="text-xs font-mono font-bold text-gold-400">03 //</span>
-              <span class="text-xs font-bold font-display text-white">Fintech Core & Ledgers</span>
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-gold-400/80"></span>
+              <span class="text-sm font-semibold text-white">Payments & E-Commerce</span>
             </div>
-            <span class="text-[10px] font-mono text-gold-300/80">&lt; 0.8ms P99 ↓</span>
+            <span class="text-xs text-slate-400 flex items-center gap-1">
+              <span>Explore</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
+            </span>
           </div>
 
+          <!-- Desktop Collapsed View -->
           <div class="blade-collapsed absolute inset-0 flex flex-col justify-between p-5 hidden lg:flex">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold tracking-widest text-gold-400">03 //</span>
+              <span class="px-2 py-0.5 rounded-md bg-gold-500/10 border border-gold-500/20 text-[10px] font-medium text-gold-300">
+                Secure Checkout
+              </span>
               <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
             <div class="my-auto py-4">
-              <div class="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-500 mb-1">DISCIPLINE</div>
-              <h3 class="text-base font-bold font-display text-white leading-snug">
-                Fintech<br>Core
+              <h3 class="text-base font-bold text-white leading-snug">
+                Payments &<br>Billing
               </h3>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-              <span class="text-gold-300">&lt; 0.8ms</span>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span>View details</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
             </div>
           </div>
 
+          <!-- Expanded View -->
           <div class="blade-expanded relative z-10 w-full h-full flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono font-bold tracking-widest text-gold-400">03 // SETTLEMENT</span>
-                <span class="px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-[10px] font-mono text-gold-300">Bank-Grade SLA</span>
+                <span class="text-xs font-semibold tracking-wider text-gold-400 uppercase">
+                  Payments & Commerce
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-medium text-gold-300">
+                  Safe, Instant Transactions
+                </span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-display text-white">
-                Fintech Core & Settlement Systems
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Online Payments & E-Commerce Systems
               </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mt-2 max-w-lg">
-                Ultra-low latency transaction engines, immutable double-entry ledgers, zero-knowledge verification, and bank-grade settlement executing at hardware speed.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2 max-w-xl">
+                Accept payments from customers anywhere in the world effortlessly. We connect credit card processors, digital wallets, automatic subscription renewals, and digital invoicing directly into your bank account.
               </p>
               <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Hardware Crypto Signing</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Real-Time AML</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">PCI-DSS L1</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Credit Card Processing</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Apple Pay & Google Pay</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Monthly Subscriptions</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Automated Invoices</span>
               </div>
             </div>
 
-            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between">
-              <button onclick="openModal('Fintech Core & Settlement Systems')" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-md transition-all">
-                <span>Commission Architecture</span>
+            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between flex-wrap gap-3">
+              <button onclick="openModal('Online Payments & E-Commerce Systems')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-105 shadow-md active:scale-95 transition-all">
+                <span>Discuss This Service</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <span class="text-[11px] font-mono text-slate-400 hidden sm:inline">LATENCY: <strong class="text-gold-300">&lt; 0.8ms</strong></span>
+              <div class="flex items-center gap-1.5 text-xs text-slate-400">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Bank-Grade Encryption & Instant Payouts</span>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- BLADE 04: Zero-Trust Security -->
+        <!-- BLADE 04: Cloud Hosting & Security -->
         <div 
           onclick="activateBlade(3)" 
           onmouseenter="handleBladeHover(3)"
           class="compact-blade relative rounded-2xl p-5 lg:p-6 border border-slate-800/80 bg-[#06080d] hover:border-gold-500/50 overflow-hidden cursor-pointer flex flex-col justify-between"
         >
+          <!-- Mobile Bar for Inactive State -->
           <div class="mobile-bar flex items-center justify-between w-full">
-            <div class="flex items-center gap-3">
-              <span class="text-xs font-mono font-bold text-gold-400">04 //</span>
-              <span class="text-xs font-bold font-display text-white">Zero-Trust Defense</span>
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-gold-400/80"></span>
+              <span class="text-sm font-semibold text-white">Hosting & Maintenance</span>
             </div>
-            <span class="text-[10px] font-mono text-gold-300/80">Post-Quantum ↓</span>
+            <span class="text-xs text-slate-400 flex items-center gap-1">
+              <span>Explore</span>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
+            </span>
           </div>
 
+          <!-- Desktop Collapsed View -->
           <div class="blade-collapsed absolute inset-0 flex flex-col justify-between p-5 hidden lg:flex">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold tracking-widest text-gold-400">04 //</span>
+              <span class="px-2 py-0.5 rounded-md bg-gold-500/10 border border-gold-500/20 text-[10px] font-medium text-gold-300">
+                24/7 Care
+              </span>
               <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span>
             </div>
             <div class="my-auto py-4">
-              <div class="text-[10px] font-mono tracking-[0.2em] uppercase text-slate-500 mb-1">DISCIPLINE</div>
-              <h3 class="text-base font-bold font-display text-white leading-snug">
-                Zero-Trust<br>Defense
+              <h3 class="text-base font-bold text-white leading-snug">
+                Hosting &<br>Security
               </h3>
             </div>
-            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono text-slate-400">
-              <span class="text-gold-300">ISO 27001</span>
+            <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span>View details</span>
               <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-gold-400"></i>
             </div>
           </div>
 
+          <!-- Expanded View -->
           <div class="blade-expanded relative z-10 w-full h-full flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-2">
-                <span class="text-xs font-mono font-bold tracking-widest text-gold-400">04 // DEFENSE SYSTEMS</span>
-                <span class="px-2 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-[10px] font-mono text-gold-300">Post-Quantum</span>
+                <span class="text-xs font-semibold tracking-wider text-gold-400 uppercase">
+                  Cloud & Support
+                </span>
+                <span class="px-2.5 py-0.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-medium text-gold-300">
+                  Complete Peace of Mind
+                </span>
               </div>
-              <h3 class="text-lg sm:text-xl font-bold font-display text-white">
-                Zero-Trust Cybersecurity Architecture
+              <h3 class="text-lg sm:text-xl font-bold text-white">
+                Cloud Hosting, Security & Ongoing Support
               </h3>
-              <p class="text-slate-300 text-xs leading-relaxed mt-2 max-w-lg">
-                Continuous cryptographic authentication, mutual TLS microservice isolation, automated code-level threat triage, and post-quantum key encapsulation.
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mt-2 max-w-xl">
+                We look after your software so you can focus on running your business. Includes high-speed cloud hosting, protection against hackers and malware, automatic daily backups, and prompt technical support whenever you need help.
               </p>
               <div class="flex flex-wrap gap-1.5 mt-3">
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Post-Quantum Keys</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">mTLS Mesh</span>
-                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-300">Zero Breach SLA</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Fast Cloud Hosting</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Anti-Hacker Defense</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">Daily Backups</span>
+                <span class="px-2.5 py-1 rounded-md bg-black/60 border border-slate-800 text-xs text-slate-300">24/7 Ongoing Support</span>
               </div>
             </div>
 
-            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between">
-              <button onclick="openModal('Zero-Trust Cybersecurity Architecture')" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-110 shadow-md transition-all">
-                <span>Commission Architecture</span>
+            <div class="pt-4 mt-3 border-t border-slate-800/80 flex items-center justify-between flex-wrap gap-3">
+              <button onclick="openModal('Cloud Hosting, Security & Ongoing Support')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-black bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500 hover:brightness-105 shadow-md active:scale-95 transition-all">
+                <span>Discuss This Service</span>
                 <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
               </button>
-              <span class="text-[11px] font-mono text-slate-400 hidden sm:inline">COMPLIANCE: <strong class="text-gold-300">ISO 27001</strong></span>
+              <div class="flex items-center gap-1.5 text-xs text-slate-400">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>Continuous Monitoring & Daily Backups</span>
+              </div>
             </div>
           </div>
         </div>
@@ -937,7 +994,7 @@
           <div class="flex items-center gap-2 mb-1.5">
             <span class="inline-block w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
             <span class="text-[11px] font-mono text-gold-400 tracking-[0.25em] uppercase font-semibold">
-              OUR PORTFOLIO // 5 PRODUCTION REELS
+              CLIENT SHOWCASE & INTERACTIVE DEMOS
             </span>
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-white tracking-tight">
@@ -948,9 +1005,9 @@
         <!-- Cinema Navigation Controls -->
         <div class="flex items-center gap-3">
           <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 border border-slate-800 text-[11px] font-mono text-slate-400">
-            <span class="text-gold-300 font-bold" id="reel-active-indicator">01</span>
+            <span class="text-gold-300 font-bold" id="reel-active-indicator">1</span>
             <span>/</span>
-            <span>05 REELS</span>
+            <span>5 DEMOS</span>
           </div>
           <div class="flex items-center gap-2">
             <button onclick="scrollReel(-1)" class="w-9 h-9 rounded-full bg-[#0a0d14] border border-slate-800 hover:border-gold-400 text-slate-300 hover:text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95" title="Previous Video Frame">
@@ -1269,11 +1326,11 @@
 
       <!-- Quick Reel Dot Selector Pills -->
       <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
-        <button onclick="jumpToReel(0)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-gold-500 text-black font-bold">01 // APEX</button>
-        <button onclick="jumpToReel(1)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">02 // SYNAPSE</button>
-        <button onclick="jumpToReel(2)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">03 // HELIOS</button>
-        <button onclick="jumpToReel(3)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">04 // FORTRESS</button>
-        <button onclick="jumpToReel(4)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">05 // TITAN</button>
+        <button onclick="jumpToReel(0)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-gold-500 text-black font-bold">Banking App</button>
+        <button onclick="jumpToReel(1)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">AI Assistant</button>
+        <button onclick="jumpToReel(2)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">Online Store</button>
+        <button onclick="jumpToReel(3)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">Healthcare Portal</button>
+        <button onclick="jumpToReel(4)" class="reel-dot px-3 py-1 rounded-full text-[10px] font-mono transition-all bg-[#0a0d14] border border-slate-800 text-slate-400 hover:text-white">Custom Core</button>
       </div>
 
     </div>
@@ -1486,17 +1543,17 @@
         <div class="mt-8 flex flex-wrap items-center gap-2 pt-4 border-t border-slate-900">
           <span class="text-xs font-medium text-slate-400 uppercase tracking-wider mr-2 hidden sm:inline">Filter:</span>
           <button onclick="filterProjectSpaces('all')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-gold-500/20 text-gold-300 border border-gold-500/40">All Projects</button>
-          <button onclick="filterProjectSpaces('fintech')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Fintech & Clearing</button>
-          <button onclick="filterProjectSpaces('ai')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Autonomous AI</button>
-          <button onclick="filterProjectSpaces('cloud')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Distributed Cloud</button>
-          <button onclick="filterProjectSpaces('security')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Cybersecurity</button>
+          <button onclick="filterProjectSpaces('fintech')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Web & Mobile Apps</button>
+          <button onclick="filterProjectSpaces('ai')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">AI & Automation</button>
+          <button onclick="filterProjectSpaces('cloud')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">E-Commerce</button>
+          <button onclick="filterProjectSpaces('security')" class="proj-filter px-3.5 py-1.5 rounded-lg text-xs font-medium bg-slate-900/60 text-slate-400 border border-slate-800/80 hover:text-white">Healthcare & Cloud</button>
         </div>
       </div>
 
       <!-- 4 Project Spaces Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
-        <!-- SPACE 01 -->
+        <!-- PROJECT 1: MOBILE & WEB BANKING -->
         <div class="proj-space-card group relative rounded-2xl bg-[#07090e]/90 border border-slate-800/90 hover:border-gold-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300" data-cat="fintech">
           <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold-500/40 rounded-tl-sm pointer-events-none"></div>
           <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold-500/40 rounded-tr-sm pointer-events-none"></div>
@@ -1504,81 +1561,81 @@
             <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/70">
               <div class="flex items-center gap-3">
                 <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20">
-                  SPACE 01 // FINTECH CORE
+                  DIGITAL BANKING & PAYMENTS
                 </span>
-                <span class="text-[11px] font-mono text-slate-500">PROJECT // APEX-SETTLE</span>
+                <span class="text-[11px] font-mono text-slate-500">CLIENT APP</span>
               </div>
               <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full border text-emerald-400 border-emerald-500/30 bg-emerald-500/10">
-                DEPLOYED // PRODUCTION SLA
+                LIVE IN PRODUCTION
               </span>
             </div>
             <h2 class="text-xl sm:text-2xl font-bold font-display text-white group-hover:text-gold-200 transition-colors mb-3">
-              Apex Global Clearing & Settlement Core
+              Instant Mobile Banking & Payment App
             </h2>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-sans">
-              Sub-millisecond high-frequency clearing engine with zero-knowledge cryptographic verification, fault-tolerant Raft consensus, and hardware-signed transaction settlement.
+              A modern, ultra-fast financial app allowing thousands of customers to transfer money instantly, manage debit cards, and check balances with biometric Face ID security.
             </p>
             <div class="relative mb-6 rounded-xl overflow-hidden border border-slate-800/90 bg-[#05070c]">
               <div class="absolute top-2 left-3 z-10 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM TELEMETRY</span>
+                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM ACTIVITY</span>
               </div>
               <canvas id="space-canvas-0" class="w-full h-44 sm:h-48 block"></canvas>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6">
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">P99 LATENCY</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">&lt; 0.58ms</div>
-                <div class="text-[9px] text-slate-500">Hardware clock</div>
+                <div class="text-[10px] font-mono text-slate-500">PAYMENT SPEED</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Under 1 Sec</div>
+                <div class="text-[9px] text-slate-500">Instant clearing</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">THROUGHPUT</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">1.8M TPS</div>
-                <div class="text-[9px] text-slate-500">Peak sustained</div>
-              </div>
-              <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">VERIFICATION</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">ZK-SNARK</div>
-                <div class="text-[9px] text-slate-500">Private proofs</div>
+                <div class="text-[10px] font-mono text-slate-500">APP RATING</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">4.9 Stars</div>
+                <div class="text-[9px] text-slate-500">45k+ reviews</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
                 <div class="text-[10px] font-mono text-slate-500">AVAILABILITY</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">99.999%</div>
-                <div class="text-[9px] text-slate-500">Zero downtime</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">24/7 Active</div>
+                <div class="text-[9px] text-slate-500">99.99% uptime</div>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
+                <div class="text-[10px] font-mono text-slate-500">SECURITY</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Bank-Grade</div>
+                <div class="text-[9px] text-slate-500">Encrypted end-to-end</div>
               </div>
             </div>
             <div class="mb-6 space-y-2 text-xs text-slate-400">
               <div class="font-mono text-slate-300 uppercase tracking-wider flex items-center gap-1.5 mb-2">
                 <i data-lucide="layers" class="w-3.5 h-3.5 text-gold-400"></i>
-                <span>Architectural Deliverables:</span>
+                <span>Key Client Features:</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Deterministic state machine replication across 7 geo-distributed validator nodes</span>
+                <span>Intuitive iOS and Android apps with 1-second biometric Face ID login</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Kernel-bypass DPDK network stack achieving sub-microsecond packet ingress</span>
+                <span>Instant push notifications for every card transaction and transfer</span>
               </div>
             </div>
             <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Rust</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">C++20</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Raft Consensus</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">gRPC</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Hardware HSM</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">React Native</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">iOS & Android</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Node.js</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Bank API</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Stripe Connect</span>
             </div>
           </div>
           <div class="pt-4 border-t border-slate-800/70 flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">SPACE VERIFIED // PRODUCTION</span>
-            <button onclick="openModal('Fintech Core & Settlement Systems')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
-              <span>COMMISSION SPEC</span>
+            <span class="text-xs font-mono text-slate-500">PROJECT CASE STUDY</span>
+            <button onclick="openModal('Mobile Banking & Payments App')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
+              <span>DISCUSS SIMILAR APP</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
 
-        <!-- SPACE 02 -->
+        <!-- PROJECT 2: AI CUSTOMER ASSISTANT -->
         <div class="proj-space-card group relative rounded-2xl bg-[#07090e]/90 border border-slate-800/90 hover:border-gold-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300" data-cat="ai">
           <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold-500/40 rounded-tl-sm pointer-events-none"></div>
           <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold-500/40 rounded-tr-sm pointer-events-none"></div>
@@ -1586,81 +1643,81 @@
             <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/70">
               <div class="flex items-center gap-3">
                 <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20">
-                  SPACE 02 // PRIVATE AI
+                  INTELLIGENT AI AUTOMATION
                 </span>
-                <span class="text-[11px] font-mono text-slate-500">PROJECT // SYNAPSE-CORE</span>
+                <span class="text-[11px] font-mono text-slate-500">CLIENT TOOL</span>
               </div>
               <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full border text-gold-400 border-gold-500/30 bg-gold-500/10">
-                AIR-GAPPED // ACTIVE CLUSTER
+                DEPLOYED FOR CLIENT
               </span>
             </div>
             <h2 class="text-xl sm:text-2xl font-bold font-display text-white group-hover:text-gold-200 transition-colors mb-3">
-              Synapse Sovereign Neural Reasoning Mesh
+              Smart AI Customer Support & Chatbot Agent
             </h2>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-sans">
-              Private, air-gapped neural engine executing domain-specific generative reasoning and vector retrieval across 140M enterprise documents with mathematical zero data leakage guarantee.
+              A custom AI assistant trained exclusively on client knowledge bases to answer complex customer questions 24/7, resolve tickets, and cut manual support workload in half.
             </p>
             <div class="relative mb-6 rounded-xl overflow-hidden border border-slate-800/90 bg-[#05070c]">
               <div class="absolute top-2 left-3 z-10 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
-                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM TELEMETRY</span>
+                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM ACTIVITY</span>
               </div>
               <canvas id="space-canvas-1" class="w-full h-44 sm:h-48 block"></canvas>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6">
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">VECTOR EMBED</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">140M Docs</div>
-                <div class="text-[9px] text-slate-500">Sub-12ms HNSW</div>
+                <div class="text-[10px] font-mono text-slate-500">RESPONSE TIME</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Instant</div>
+                <div class="text-[9px] text-slate-500">&lt; 1 sec reply</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">INFERENCE</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">240 Tok/s</div>
-                <div class="text-[9px] text-slate-500">Dedicated H100</div>
+                <div class="text-[10px] font-mono text-slate-500">SUPPORT SAVINGS</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">65% Less Work</div>
+                <div class="text-[9px] text-slate-500">Automated replies</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">LEAKAGE SLA</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">0.00% Zero</div>
-                <div class="text-[9px] text-slate-500">Air-gapped mesh</div>
+                <div class="text-[10px] font-mono text-slate-500">DATA PRIVACY</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">100% Private</div>
+                <div class="text-[9px] text-slate-500">Zero public leak</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">PRECISION</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">99.4%</div>
-                <div class="text-[9px] text-slate-500">Fine-tuned weights</div>
+                <div class="text-[10px] font-mono text-slate-500">ACCURACY SCORE</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">98.7%</div>
+                <div class="text-[9px] text-slate-500">Verified answers</div>
               </div>
             </div>
             <div class="mb-6 space-y-2 text-xs text-slate-400">
               <div class="font-mono text-slate-300 uppercase tracking-wider flex items-center gap-1.5 mb-2">
                 <i data-lucide="layers" class="w-3.5 h-3.5 text-gold-400"></i>
-                <span>Architectural Deliverables:</span>
+                <span>Key Client Features:</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Air-gapped on-premise cluster ensuring weights never touch external clouds</span>
+                <span>Integrated directly into website chat, WhatsApp, and email ticketing</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Autonomous multi-agent verification loop cross-checking factual accuracy</span>
+                <span>Drafts intelligent responses and routes complex questions to human staff</span>
               </div>
             </div>
             <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">PyTorch</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">vLLM</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Qdrant Mesh</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">CUDA 12</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">NVIDIA H100</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Custom AI</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Python</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">ChatGPT API</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Knowledge Base</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Slack & Zendesk</span>
             </div>
           </div>
           <div class="pt-4 border-t border-slate-800/70 flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">SPACE VERIFIED // AIR-GAPPED</span>
-            <button onclick="openModal('Bespoke AI & Autonomous Agent Platforms')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
-              <span>COMMISSION SPEC</span>
+            <span class="text-xs font-mono text-slate-500">PROJECT CASE STUDY</span>
+            <button onclick="openModal('Smart AI Chatbot Agent')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
+              <span>DISCUSS AI AGENTS</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
 
-        <!-- SPACE 03 -->
+        <!-- PROJECT 3: HIGH-TRAFFIC E-COMMERCE -->
         <div class="proj-space-card group relative rounded-2xl bg-[#07090e]/90 border border-slate-800/90 hover:border-gold-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300" data-cat="cloud">
           <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold-500/40 rounded-tl-sm pointer-events-none"></div>
           <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold-500/40 rounded-tr-sm pointer-events-none"></div>
@@ -1668,81 +1725,81 @@
             <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/70">
               <div class="flex items-center gap-3">
                 <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20">
-                  SPACE 03 // CLOUD FABRIC
+                  HIGH-SCALE E-COMMERCE
                 </span>
-                <span class="text-[11px] font-mono text-slate-500">PROJECT // HELIOS-MESH</span>
+                <span class="text-[11px] font-mono text-slate-500">CLIENT STORE</span>
               </div>
               <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full border text-cyan-400 border-cyan-500/30 bg-cyan-500/10">
-                MULTI-REGION // HIGH CONCURRENCY
+                LIVE & GENERATING REVENUE
               </span>
             </div>
             <h2 class="text-xl sm:text-2xl font-bold font-display text-white group-hover:text-gold-200 transition-colors mb-3">
-              Helios Planet-Scale Distributed Backbone
+              High-Traffic Online Store & Inventory System
             </h2>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-sans">
-              Planet-scale sovereign cloud fabric with active-active geo-routing across 14 enterprise regions, orchestrating seamless strangler-fig migration of monolithic legacy banking cores.
+              A blazing-fast e-commerce shopping platform built to handle major seasonal sales spikes without crashing, featuring 1-click checkout and automated warehouse sync.
             </p>
             <div class="relative mb-6 rounded-xl overflow-hidden border border-slate-800/90 bg-[#05070c]">
               <div class="absolute top-2 left-3 z-10 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM TELEMETRY</span>
+                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM ACTIVITY</span>
               </div>
               <canvas id="space-canvas-2" class="w-full h-44 sm:h-48 block"></canvas>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6">
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">PEAK TRAFFIC</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">42M RPS</div>
-                <div class="text-[9px] text-slate-500">Edge filtered</div>
+                <div class="text-[10px] font-mono text-slate-500">CHECKOUT SPEED</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">1-Click Pay</div>
+                <div class="text-[9px] text-slate-500">Apple & Google Pay</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">GLOBAL REGIONS</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">14 Active</div>
-                <div class="text-[9px] text-slate-500">Active-Active</div>
+                <div class="text-[10px] font-mono text-slate-500">PAGE LOAD</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">0.4 Seconds</div>
+                <div class="text-[9px] text-slate-500">Instant browsing</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">FAILOVER</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">&lt; 2.4s</div>
-                <div class="text-[9px] text-slate-500">Auto recovery</div>
+                <div class="text-[10px] font-mono text-slate-500">TRAFFIC CAPACITY</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Unlimited</div>
+                <div class="text-[9px] text-slate-500">Auto-scales easily</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">INFRA EFFICIENCY</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">-46% Cost</div>
-                <div class="text-[9px] text-slate-500">Bin-packing</div>
+                <div class="text-[10px] font-mono text-slate-500">CART DROPOFF</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">-32% Drop</div>
+                <div class="text-[9px] text-slate-500">Streamlined checkout</div>
               </div>
             </div>
             <div class="mb-6 space-y-2 text-xs text-slate-400">
               <div class="font-mono text-slate-300 uppercase tracking-wider flex items-center gap-1.5 mb-2">
                 <i data-lucide="layers" class="w-3.5 h-3.5 text-gold-400"></i>
-                <span>Architectural Deliverables:</span>
+                <span>Key Client Features:</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>BGP Anycast routing mesh with eBPF-accelerated packet inspection</span>
+                <span>Automated inventory updates across online shop and physical retail stores</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Zero-downtime strangler-fig transformation migrating mainframe workloads</span>
+                <span>Lightning-fast checkout flow increasing conversion rates by 28%</span>
               </div>
             </div>
             <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Go</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Kubernetes</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">eBPF</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Kafka Mesh</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Multi-Cloud</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Next.js</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Shopify Plus</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">PostgreSQL</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Stripe Payments</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Cloudflare CDN</span>
             </div>
           </div>
           <div class="pt-4 border-t border-slate-800/70 flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">SPACE VERIFIED // GLOBAL</span>
-            <button onclick="openModal('Enterprise Cloud & Distributed Systems')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
-              <span>COMMISSION SPEC</span>
+            <span class="text-xs font-mono text-slate-500">PROJECT CASE STUDY</span>
+            <button onclick="openModal('High-Traffic E-Commerce Platform')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
+              <span>DISCUSS E-COMMERCE</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
 
-        <!-- SPACE 04 -->
+        <!-- PROJECT 4: HEALTHCARE PATIENT PORTAL -->
         <div class="proj-space-card group relative rounded-2xl bg-[#07090e]/90 border border-slate-800/90 hover:border-gold-500/40 p-6 sm:p-8 flex flex-col justify-between transition-all duration-300" data-cat="security">
           <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold-500/40 rounded-tl-sm pointer-events-none"></div>
           <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold-500/40 rounded-tr-sm pointer-events-none"></div>
@@ -1750,75 +1807,75 @@
             <div class="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-800/70">
               <div class="flex items-center gap-3">
                 <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-gold-500/10 text-gold-400 border border-gold-500/20">
-                  SPACE 04 // ZERO-TRUST DEFENSE
+                  SECURE PATIENT PORTAL
                 </span>
-                <span class="text-[11px] font-mono text-slate-500">PROJECT // FORTRESS-DEFENSE</span>
+                <span class="text-[11px] font-mono text-slate-500">CLIENT PLATFORM</span>
               </div>
               <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full border text-purple-400 border-purple-500/30 bg-purple-500/10">
-                SECURITY CLEARANCE // POST-QUANTUM
+                HIPAA COMPLIANT & ACTIVE
               </span>
             </div>
             <h2 class="text-xl sm:text-2xl font-bold font-display text-white group-hover:text-gold-200 transition-colors mb-3">
-              Fortress Zero-Trust Cryptographic Mesh
+              Private Healthcare & Doctor Appointment Portal
             </h2>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-sans">
-              Post-quantum cryptographic mesh providing continuous identity verification, mutual TLS microsegmentation, and automated red-team defense against advanced nation-state vectors.
+              A secure, easy-to-use patient web portal enabling thousands of patients to book doctor visits, view confidential lab results, and message clinics securely.
             </p>
             <div class="relative mb-6 rounded-xl overflow-hidden border border-slate-800/90 bg-[#05070c]">
               <div class="absolute top-2 left-3 z-10 flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-purple-400 animate-ping"></span>
-                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM TELEMETRY</span>
+                <span class="text-[10px] font-mono text-slate-400">LIVE SYSTEM ACTIVITY</span>
               </div>
               <canvas id="space-canvas-3" class="w-full h-44 sm:h-48 block"></canvas>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mb-6">
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">SECURITY RECORD</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">0 Breaches</div>
-                <div class="text-[9px] text-slate-500">Continuous test</div>
+                <div class="text-[10px] font-mono text-slate-500">SECURITY RATING</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Strict HIPAA</div>
+                <div class="text-[9px] text-slate-500">Full compliance</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">PQ READINESS</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Kyber-1024</div>
-                <div class="text-[9px] text-slate-500">NIST standardized</div>
+                <div class="text-[10px] font-mono text-slate-500">ACTIVE PATIENTS</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">120,000+</div>
+                <div class="text-[9px] text-slate-500">Monthly users</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">REVOCATION</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">&lt; 100ms</div>
-                <div class="text-[9px] text-slate-500">Global invalidation</div>
+                <div class="text-[10px] font-mono text-slate-500">BOOKING TIME</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">30 Seconds</div>
+                <div class="text-[9px] text-slate-500">Self-service booking</div>
               </div>
               <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800/80">
-                <div class="text-[10px] font-mono text-slate-500">COMPLIANCE</div>
-                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">ISO 27001</div>
-                <div class="text-[9px] text-slate-500">SOC2 & FedRAMP</div>
+                <div class="text-[10px] font-mono text-slate-500">DATA PRIVACY</div>
+                <div class="text-sm sm:text-base font-bold font-mono text-gold-300">Bank-Grade</div>
+                <div class="text-[9px] text-slate-500">Encrypted at rest</div>
               </div>
             </div>
             <div class="mb-6 space-y-2 text-xs text-slate-400">
               <div class="font-mono text-slate-300 uppercase tracking-wider flex items-center gap-1.5 mb-2">
                 <i data-lucide="layers" class="w-3.5 h-3.5 text-gold-400"></i>
-                <span>Architectural Deliverables:</span>
+                <span>Key Client Features:</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Post-quantum ML-KEM (Kyber) and ML-DSA algorithms embedded in wire transport</span>
+                <span>Completely private medical records access protected with two-factor SMS authentication</span>
               </div>
               <div class="flex items-start gap-2">
                 <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-400 mt-0.5"></i>
-                <span>Continuous ephemeral credentials isolating inter-service microsegmentation</span>
+                <span>Self-service scheduling reducing clinic phone hold times to zero</span>
               </div>
             </div>
             <div class="flex flex-wrap gap-1.5 mb-6">
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Rust</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Kyber-1024</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">SPIFFE/SPIRE</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Vault</span>
-              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">mTLS Mesh</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">HIPAA Cloud</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">React</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">TypeScript</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Encrypted DB</span>
+              <span class="px-2.5 py-1 rounded bg-black/50 border border-slate-800 text-[10px] font-mono text-slate-300">Twilio SMS</span>
             </div>
           </div>
           <div class="pt-4 border-t border-slate-800/70 flex items-center justify-between">
-            <span class="text-xs font-mono text-slate-500">SPACE VERIFIED // HARDENED</span>
-            <button onclick="openModal('Zero-Trust Cybersecurity Architecture')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
-              <span>COMMISSION SPEC</span>
+            <span class="text-xs font-mono text-slate-500">PROJECT CASE STUDY</span>
+            <button onclick="openModal('Secure Healthcare Patient Portal')" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-gold-500/10 hover:bg-gold-500/20 text-gold-300 border border-gold-500/30 text-xs font-bold font-mono">
+              <span>DISCUSS HEALTHCARE APP</span>
               <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
             </button>
           </div>
@@ -1826,27 +1883,27 @@
 
       </div>
 
-      <!-- SPACE 05 ALLOCATION BANNER -->
+      <!-- CUSTOM PROJECT INQUIRY BANNER -->
       <div class="mt-14 relative rounded-2xl bg-gradient-to-r from-gold-500/10 via-[#0a0d14] to-gold-500/5 border border-gold-500/30 p-8 sm:p-12 overflow-hidden">
         <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div class="max-w-2xl text-center md:text-left">
             <div class="inline-flex items-center gap-2 text-[11px] font-mono tracking-widest text-gold-300 uppercase mb-2">
-              <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-gold-400"></i>
-              <span>EXPANSION // SPACE 05 ALLOCATION</span>
+              <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-400"></i>
+              <span>CUSTOM SOFTWARE DEVELOPMENT</span>
             </div>
             <h3 class="text-2xl sm:text-3xl font-extrabold font-display text-white mb-2">
-              Need a Custom Project Space for Your Enterprise?
+              Need a Custom App or System Built for Your Business?
             </h3>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
-              Our Principal Architects allocate dedicated project spaces for bespoke distributed platforms, private AI infrastructure, and mission-critical ledger transformations. Reserve your space for the upcoming quarter.
+              Whether you need a modern web platform, an iOS/Android mobile app, or an automated workflow system, our engineering team builds software tailored precisely to your company's workflows.
             </p>
           </div>
           <button
-            onclick="openModal('Custom Project Space Commission')"
+            onclick="openModal('Custom Software Project Consultation')"
             class="flex-shrink-0 inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-bold text-xs sm:text-sm tracking-wider shadow-lg hover:shadow-gold-500/20 hover:brightness-110 active:scale-95 transition-all"
           >
-            <i data-lucide="sparkles" class="w-4 h-4 text-black"></i>
-            <span>RESERVE PROJECT SPACE</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 text-black"></i>
+            <span>START YOUR PROJECT</span>
           </button>
         </div>
       </div>
@@ -1864,22 +1921,22 @@
       <div class="text-center max-w-3xl mx-auto mb-16">
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/20 text-xs font-medium text-gold-300 mb-4">
           <i data-lucide="compass" class="w-3.5 h-3.5 text-gold-400"></i>
-          <span>Engineering Provenance</span>
+          <span>Software Engineering & Craftsmanship</span>
         </div>
         <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-white mb-6">
-          Architecting <span class="text-gold-gradient">Sovereign Software</span> for Global Enterprises
+          Building <span class="text-gold-gradient">Reliable Software</span> for Growing Businesses
         </h1>
         <p class="text-sm sm:text-base text-slate-400 leading-relaxed font-sans">
-          Digithect was founded on a singular conviction: mission-critical software systems demand the same mathematical discipline, structural longevity, and aesthetic nobility as monumental physical architecture.
+          Digithect was founded on a simple principle: custom business software should be dependable, beautifully designed, and built to last without constant headaches or unexpected crashes.
         </p>
       </div>
 
-      <!-- Vitruvian Triad -->
+      <!-- Principles of Good Software -->
       <div class="mb-20">
         <div class="text-center mb-10">
-          <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">The Classical Foundation</span>
+          <span class="text-xs font-semibold text-gold-400 tracking-wider uppercase">What Guides Our Work</span>
           <h2 class="text-2xl sm:text-3xl font-bold font-display text-white mt-1">
-            The Vitruvian Triad in Modern Software
+            Three Principles of Good Software
           </h2>
         </div>
 
@@ -1888,10 +1945,10 @@
             <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform text-gold-400">
               <i data-lucide="building-2" class="w-6 h-6"></i>
             </div>
-            <div class="text-xs font-mono text-gold-400/80 uppercase tracking-widest mb-1">01 // FIRMITAS</div>
-            <h3 class="text-xl font-bold font-display text-white mb-3">Structural Soundness</h3>
+            <div class="text-xs font-mono text-gold-400/80 uppercase tracking-widest mb-1">RELIABILITY</div>
+            <h3 class="text-xl font-bold font-display text-white mb-3">Rock-Solid Stability</h3>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
-              Fault-tolerant distributed consensus, memory-safe execution with zero leaks, post-quantum cryptographic security, and automated self-healing failover across global cloud backbones.
+              Software that simply does not crash. We build systems that run smoothly 24 hours a day, 7 days a week, with automated daily backups and instant self-recovery.
             </p>
           </div>
 
@@ -1899,10 +1956,10 @@
             <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform text-gold-400">
               <i data-lucide="cpu" class="w-6 h-6"></i>
             </div>
-            <div class="text-xs font-mono text-gold-400/80 uppercase tracking-widest mb-1">02 // UTILITAS</div>
-            <h3 class="text-xl font-bold font-display text-white mb-3">Uncompromising Utility</h3>
+            <div class="text-xs font-mono text-gold-400/80 uppercase tracking-widest mb-1">USABILITY</div>
+            <h3 class="text-xl font-bold font-display text-white mb-3">Simple & Easy to Use</h3>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
-              Sub-millisecond latency envelopes, high-throughput transaction buses capable of 10M+ RPS, and domain-specialized private AI models engineered to generate immediate competitive advantage.
+              Great software feels effortless. We design clean, responsive interfaces that your team and customers can pick up immediately without reading lengthy manuals.
             </p>
           </div>
 
@@ -1910,103 +1967,103 @@
             <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/20 flex items-center justify-center mb-6 group-hover:scale-105 transition-transform text-gold-400">
               <i data-lucide="sparkles" class="w-6 h-6"></i>
             </div>
-            <div class="text-xs font-mono text-gold-400/80 uppercase tracking-widest mb-1">03 // VENUSTAS</div>
-            <h3 class="text-xl font-bold font-display text-white mb-3">Architectural Beauty</h3>
+            <div class="text-xs font-mono text-gold-400/80 uppercase tracking-widest mb-1">AESTHETICS</div>
+            <h3 class="text-xl font-bold font-display text-white mb-3">Modern Visual Polish</h3>
             <p class="text-xs sm:text-sm text-slate-400 leading-relaxed font-sans">
-              Crisp modular decomposition, self-documenting domain models, intuitive visual systems observability, and executive interfaces engineered with 120 FPS precision and distinction.
+              Fast, beautiful, and thoughtful. Every screen, animation, and button is crafted to give your business a world-class, premium impression on phones and desktops alike.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- 4 Immutable Standards -->
+      <!-- 4 Commitments -->
       <div class="mb-20 p-8 sm:p-12 rounded-2xl bg-[#06080e] border border-slate-800">
         <div class="max-w-2xl mb-10">
-          <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">Our Code of Construction</span>
+          <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">How We Work With You</span>
           <h2 class="text-2xl sm:text-3xl font-bold font-display text-white mt-1">
-            Four Immutable Engineering Standards
+            Four Clear Commitments to Every Client
           </h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-2">
-            Every system designed, reviewed, and deployed by Digithect must meet four non-negotiable architectural mandates.
+            Every project we deliver adheres to four core client guarantees.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-              <span class="font-mono text-xs font-bold text-gold-400">01</span>
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white mb-1">Sovereignty & Zero Vendor Lock-in</h4>
+              <h4 class="text-base font-bold text-white mb-1">You Own 100% of Your Code</h4>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                You own 100% of your source code, architectural schemas, and model weights. Our platforms can be deployed air-gapped on bare metal, hybrid clouds, or sovereign data centers.
+                No lock-in, no hostage code. You receive full ownership of the intellectual property, source files, and design assets as soon as work is completed.
               </p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-              <span class="font-mono text-xs font-bold text-gold-400">02</span>
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white mb-1">Mathematical Precision & Memory Safety</h4>
+              <h4 class="text-base font-bold text-white mb-1">Security & Privacy by Default</h4>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                We construct backbones with memory-safe languages like Rust and Go, accompanied by formal state-machine proofs, automated continuous fuzzing, and deterministic concurrency control.
+                Your customer and company data is protected with bank-grade encryption, secure user logins, and daily off-site backups.
               </p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-              <span class="font-mono text-xs font-bold text-gold-400">03</span>
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white mb-1">Absolute Discretion & Defense-Grade Security</h4>
+              <h4 class="text-base font-bold text-white mb-1">Plain-English Communication</h4>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                We work under strict mutual non-disclosure agreements with tier-1 banks, sovereign funds, and defense contractors. Our code passes rigorous third-party penetration testing.
+                We never hide behind technical jargon. You get clear milestones, honest timelines, transparent pricing, and responsive support whenever you need help.
               </p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
             <div class="w-8 h-8 rounded-lg bg-gold-500/10 border border-gold-500/30 flex items-center justify-center flex-shrink-0 mt-1">
-              <span class="font-mono text-xs font-bold text-gold-400">04</span>
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-gold-400"></i>
             </div>
             <div>
-              <h4 class="text-base font-bold text-white mb-1">Decadal Longevity & Evolution</h4>
+              <h4 class="text-base font-bold text-white mb-1">Built to Grow With You</h4>
               <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
-                We build architectures designed to endure for 15+ years. Clean hexagonal interfaces and strangler-fig migration paths ensure your core can evolve without catastrophic rewrites.
+                We build modern software on proven technologies (like React, Next.js, and Node.js) so your platform can easily handle 10x more customers as your business expands.
               </p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Verified Benchmarks -->
+      <!-- Verified Guarantees -->
       <div class="mb-20">
         <div class="text-center mb-10">
-          <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">Verified Benchmarks</span>
+          <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">Client Guarantees</span>
           <h2 class="text-2xl sm:text-3xl font-bold font-display text-white mt-1">
-            Architectural Performance in Numbers
+            Why Businesses Choose Digithect
           </h2>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div class="p-6 rounded-xl bg-[#07090e] border border-slate-800 text-center">
-            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">99.999%</div>
-            <div class="text-xs font-mono text-slate-400">HISTORICAL SLA UPTIME</div>
+            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">100%</div>
+            <div class="text-xs font-mono text-slate-400 uppercase">Code Ownership</div>
           </div>
           <div class="p-6 rounded-xl bg-[#07090e] border border-slate-800 text-center">
-            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">$40B+</div>
-            <div class="text-xs font-mono text-slate-400">ANNUAL SETTLEMENT SECURED</div>
+            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">24/7</div>
+            <div class="text-xs font-mono text-slate-400 uppercase">System Reliability</div>
           </div>
           <div class="p-6 rounded-xl bg-[#07090e] border border-slate-800 text-center">
-            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">0</div>
-            <div class="text-xs font-mono text-slate-400">SECURITY BREACHES RECORDED</div>
+            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">Bank-Grade</div>
+            <div class="text-xs font-mono text-slate-400 uppercase">Security & Privacy</div>
           </div>
           <div class="p-6 rounded-xl bg-[#07090e] border border-slate-800 text-center">
-            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">14</div>
-            <div class="text-xs font-mono text-slate-400">ACTIVE GLOBAL REGIONS</div>
+            <div class="text-2xl sm:text-4xl font-extrabold font-mono text-gold-300 mb-1">Clear</div>
+            <div class="text-xs font-mono text-slate-400 uppercase">Fixed Sprint Pricing</div>
           </div>
         </div>
       </div>
@@ -2015,42 +2072,42 @@
       <div class="mb-20 p-8 sm:p-10 rounded-2xl bg-gradient-to-b from-[#0a0d14] to-[#040507] border border-slate-800">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8">
           <div>
-            <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">Global Footprint</span>
-            <h3 class="text-2xl font-bold font-display text-white mt-1">Principal Architect Offices</h3>
+            <span class="text-xs font-mono text-gold-400 tracking-widest uppercase">Our Presence</span>
+            <h3 class="text-2xl font-bold font-display text-white mt-1">Worldwide Engineering Offices</h3>
           </div>
           <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>ROUND-THE-CLOCK SYSTEM ARCHITECTURE COVERAGE</span>
+            <span>ROUND-THE-CLOCK GLOBAL SUPPORT</span>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <div class="p-5 rounded-xl bg-[#05070c] border border-slate-800/80">
-            <div class="text-xs font-mono text-gold-400 font-bold mb-1">ZURICH // HQ</div>
-            <div class="text-sm font-bold text-white mb-2">Cryptographic Labs</div>
+            <div class="text-xs font-mono text-gold-400 font-bold mb-1">ZURICH</div>
+            <div class="text-sm font-bold text-white mb-2">Europe Engineering Hub</div>
             <div class="text-xs text-slate-400 font-sans">Bahnhofstrasse District, Switzerland</div>
-            <div class="text-[11px] font-mono text-slate-500 mt-3">CET // UTC+1</div>
+            <div class="text-[11px] font-mono text-slate-500 mt-3">CET Timezone</div>
           </div>
 
           <div class="p-5 rounded-xl bg-[#05070c] border border-slate-800/80">
             <div class="text-xs font-mono text-gold-400 font-bold mb-1">LONDON</div>
-            <div class="text-sm font-bold text-white mb-2">Fintech Core Center</div>
+            <div class="text-sm font-bold text-white mb-2">UK & Europe Client Services</div>
             <div class="text-xs text-slate-400 font-sans">Mayfair Engineering House, UK</div>
-            <div class="text-[11px] font-mono text-slate-500 mt-3">GMT // UTC+0</div>
+            <div class="text-[11px] font-mono text-slate-500 mt-3">GMT Timezone</div>
           </div>
 
           <div class="p-5 rounded-xl bg-[#05070c] border border-slate-800/80">
             <div class="text-xs font-mono text-gold-400 font-bold mb-1">NEW YORK</div>
-            <div class="text-sm font-bold text-white mb-2">Cloud Scale Directorate</div>
+            <div class="text-sm font-bold text-white mb-2">Americas Client Hub</div>
             <div class="text-xs text-slate-400 font-sans">Wall Street Tower, USA</div>
-            <div class="text-[11px] font-mono text-slate-500 mt-3">EST // UTC-5</div>
+            <div class="text-[11px] font-mono text-slate-500 mt-3">EST Timezone</div>
           </div>
 
           <div class="p-5 rounded-xl bg-[#05070c] border border-slate-800/80">
             <div class="text-xs font-mono text-gold-400 font-bold mb-1">SINGAPORE</div>
-            <div class="text-sm font-bold text-white mb-2">Autonomous AI Gateway</div>
+            <div class="text-sm font-bold text-white mb-2">Asia-Pacific Technology Hub</div>
             <div class="text-xs text-slate-400 font-sans">Marina Bay Financial Center, SG</div>
-            <div class="text-[11px] font-mono text-slate-500 mt-3">SGT // UTC+8</div>
+            <div class="text-[11px] font-mono text-slate-500 mt-3">SGT Timezone</div>
           </div>
         </div>
       </div>
@@ -2058,16 +2115,16 @@
       <!-- Call to Action -->
       <div class="text-center p-10 sm:p-14 rounded-2xl bg-gradient-to-r from-gold-500/10 via-[#0a0d14] to-gold-500/10 border border-gold-500/30">
         <h3 class="text-2xl sm:text-3xl font-extrabold font-display text-white mb-3">
-          Commission an Architectural Review
+          Ready to Build Your Next Software Project?
         </h3>
         <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto mb-8 font-sans">
-          Our Principal Architects provide comprehensive forensics and blueprints for enterprise software systems under strict mutual confidentiality.
+          Book a free introductory consultation to discuss your product idea, software requirements, and project timeline with our senior developers.
         </p>
         <button
-          onclick="openModal('About Page Architecture Review')"
+          onclick="openModal('About Page Project Consultation')"
           class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-bold text-xs sm:text-sm tracking-wider shadow-lg hover:shadow-gold-500/30 hover:brightness-110 active:scale-95 transition-all"
         >
-          <span>COMMISSION CONSULTATION</span>
+          <span>SCHEDULE A CONSULTATION</span>
           <i data-lucide="arrow-right" class="w-4 h-4 text-black"></i>
         </button>
       </div>
@@ -2144,54 +2201,53 @@
                     <input id="c-phone" type="tel" placeholder="e.g. +41 44 211 00 00" class="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-base sm:text-sm text-slate-100 placeholder:text-slate-600 transition-colors">
                   </div>
                   <div>
-                    <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Architectural Domain *</label>
+                    <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Service Needed *</label>
                     <select id="c-domain" class="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-base sm:text-sm text-slate-100 transition-colors">
-                      <option>Fintech Core & Settlement Systems</option>
-                      <option>Bespoke AI & Autonomous Agent Platforms</option>
-                      <option>Enterprise Cloud & Distributed Systems</option>
-                      <option>Zero-Trust Cybersecurity Architecture</option>
-                      <option>Core De-Monolithing & Transformation</option>
-                      <option>Custom Project Space / Architecture Review</option>
+                      <option>Custom Web & Mobile Applications</option>
+                      <option>AI Tools & Business Automation</option>
+                      <option>Payment Processing & E-Commerce</option>
+                      <option>Cloud Hosting, Security & Maintenance</option>
+                      <option>Custom Software Architecture Consultation</option>
                     </select>
                   </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Throughput Envelope / Scale</label>
+                    <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Project Scope / Company Size</label>
                     <select id="c-scale" class="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-base sm:text-sm text-slate-100 transition-colors">
-                      <option>100K RPS // Mid-Tier Distributed</option>
-                      <option selected>1M+ RPS // High Concurrency</option>
-                      <option>10M+ RPS // Planet-Scale Mesh</option>
-                      <option>Sub-millisecond Latency Specialized</option>
+                      <option>Startup / New MVP Launch</option>
+                      <option selected>Growing Business (10k - 100k Users)</option>
+                      <option>Established Business / High-Volume</option>
+                      <option>System Upgrade & Redesign</option>
                     </select>
                   </div>
                   <div>
                     <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Deployment Window</label>
                     <select id="c-timeline" class="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-base sm:text-sm text-slate-100 transition-colors">
-                      <option selected>Q1-Q2 Immediate Commission</option>
-                      <option>Emergency Forensics / System Incident</option>
-                      <option>Upcoming Fiscal Strategic Overhaul</option>
-                      <option>Exploratory Architecture Audit</option>
+                      <option selected>Immediate (Within 1-2 Months)</option>
+                      <option>Next Quarter (2-4 Months)</option>
+                      <option>Planning / Exploration Stage</option>
+                      <option>Urgent Fix or Maintenance</option>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Technical Scope & Architectural Imperatives *</label>
-                  <textarea required id="c-scope" rows="4" placeholder="Outline current system bottlenecks, legacy constraints, target latency SLA, security classification..." class="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-base sm:text-sm text-slate-100 placeholder:text-slate-600 transition-colors resize-none font-sans"></textarea>
+                  <label class="block text-xs font-mono text-slate-400 mb-1.5 uppercase tracking-wider">Project Description & Requirements *</label>
+                  <textarea required id="c-scope" rows="4" placeholder="Tell us about the software you need built, your business goals, target audience, or current technical challenges..." class="w-full px-4 py-3 rounded-lg bg-black/60 border border-slate-800 focus:border-gold-500/70 focus:outline-none text-base sm:text-sm text-slate-100 placeholder:text-slate-600 transition-colors resize-none font-sans"></textarea>
                 </div>
 
                 <label class="flex items-start gap-3 p-3.5 rounded-lg bg-slate-900/40 border border-slate-800/80 cursor-pointer hover:border-slate-700 transition-colors">
                   <input type="checkbox" id="c-nda" checked class="mt-0.5 rounded border-slate-700 text-gold-500 focus:ring-0 bg-black cursor-pointer">
                   <div class="text-xs text-slate-400 leading-relaxed">
-                    <strong class="text-slate-200">Require Mutual Non-Disclosure Agreement (M-NDA):</strong> Prior to detailed architecture inspection, Digithect will execute our bilateral cryptographic confidentiality agreement.
+                    <strong class="text-slate-200">Require Mutual Non-Disclosure Agreement (M-NDA):</strong> Prior to detailed architecture inspection, Digithect will execute our bilateral confidentiality agreement to protect your IP.
                   </div>
                 </label>
 
                 <button id="c-submit-btn" type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-[#F9E8A2] via-[#E2BB58] to-[#C99726] text-black font-bold text-sm tracking-wider shadow-lg hover:shadow-gold-500/30 hover:brightness-110 active:scale-[0.99] transition-all flex items-center justify-center gap-2.5">
                   <i data-lucide="send" class="w-4 h-4 text-black"></i>
-                  <span>TRANSMIT ARCHITECTURAL DOCKET</span>
+                  <span>SUBMIT PROJECT INQUIRY</span>
                 </button>
               </form>
             </div>
@@ -2203,19 +2259,19 @@
               </div>
               <div>
                 <div class="text-xs font-mono text-gold-400 uppercase tracking-widest mb-1">
-                  DOCKET RECORDED // PRINCIPAL ASSIGNED
+                  INQUIRY RECORDED - TEAM ASSIGNED
                 </div>
                 <h3 class="text-2xl sm:text-3xl font-bold font-display text-white mb-2">
                   Inquiry Successfully Received
                 </h3>
                 <p class="text-xs sm:text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
-                  Thank you, <strong id="res-client-name" class="text-white"></strong>. Your technical scope has been encrypted and routed directly to our Principal Software Architect.
+                  Thank you, <strong id="res-client-name" class="text-white"></strong>. Your project requirements have been safely received and routed directly to our senior software architects. We will be in touch within 24 hours.
                 </p>
               </div>
 
               <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800 text-left max-w-md mx-auto font-mono text-xs space-y-2">
                 <div class="flex justify-between text-slate-400">
-                  <span>DOCKET NUMBER:</span>
+                  <span>REFERENCE NUMBER:</span>
                   <span id="res-docket-no" class="text-gold-300 font-bold"></span>
                 </div>
                 <div class="flex justify-between text-slate-400">
@@ -2296,7 +2352,7 @@
                   <div class="font-bold text-white">Zurich (Headquarters)</div>
                   <div class="text-slate-400 text-[11px]">Bahnhofstrasse Financial District</div>
                 </div>
-                <span class="font-mono text-[10px] text-gold-400/90">CET // UTC+1</span>
+                <span class="font-mono text-[10px] text-gold-400/90">CET Timezone</span>
               </div>
 
               <div class="p-3.5 rounded-lg bg-black/40 border border-slate-800/80 flex items-center justify-between">
@@ -2304,7 +2360,7 @@
                   <div class="font-bold text-white">London Engineering Hub</div>
                   <div class="text-slate-400 text-[11px]">Mayfair Engineering House</div>
                 </div>
-                <span class="font-mono text-[10px] text-gold-400/90">GMT // UTC+0</span>
+                <span class="font-mono text-[10px] text-gold-400/90">GMT Timezone</span>
               </div>
 
               <div class="p-3.5 rounded-lg bg-black/40 border border-slate-800/80 flex items-center justify-between">
@@ -2312,7 +2368,7 @@
                   <div class="font-bold text-white">New York Cloud Directorate</div>
                   <div class="text-slate-400 text-[11px]">Wall Street Tower Suite</div>
                 </div>
-                <span class="font-mono text-[10px] text-gold-400/90">EST // UTC-5</span>
+                <span class="font-mono text-[10px] text-gold-400/90">EST Timezone</span>
               </div>
 
               <div class="p-3.5 rounded-lg bg-black/40 border border-slate-800/80 flex items-center justify-between">
@@ -2320,7 +2376,7 @@
                   <div class="font-bold text-white">Singapore AI Gateway</div>
                   <div class="text-slate-400 text-[11px]">Marina Bay Financial Center</div>
                 </div>
-                <span class="font-mono text-[10px] text-gold-400/90">SGT // UTC+8</span>
+                <span class="font-mono text-[10px] text-gold-400/90">SGT Timezone</span>
               </div>
             </div>
           </div>
@@ -2351,7 +2407,7 @@
       <!-- Center Status Pill -->
       <div class="flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-400">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-        <span>ALL SYSTEMS OPERATIONAL // 99.999% SLA</span>
+        <span>ALL SYSTEMS OPERATIONAL - 24/7 SUPPORT</span>
       </div>
 
       <!-- Quick Nav Links -->
@@ -2359,10 +2415,10 @@
         <a href="#hero" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;" class="hover:text-gold-300 transition-colors">Top ↑</a>
         <button onclick="navigateToPage('home')" class="hover:text-gold-300 transition-colors">Home</button>
         <button onclick="navigateToPage('services')" class="hover:text-gold-300 transition-colors">Services</button>
-        <button onclick="navigateToPage('projects')" class="hover:text-gold-300 transition-colors">Projects (4 Spaces)</button>
+        <button onclick="navigateToPage('projects')" class="hover:text-gold-300 transition-colors">Projects</button>
         <button onclick="navigateToPage('about')" class="hover:text-gold-300 transition-colors">About</button>
         <button onclick="navigateToPage('contact')" class="hover:text-gold-300 transition-colors">Contact</button>
-        <button onclick="openModal()" class="text-gold-400 hover:text-gold-300 transition-colors">Engage</button>
+        <button onclick="openModal()" class="text-gold-400 hover:text-gold-300 transition-colors">Contact Us</button>
       </div>
     </div>
   </footer>
@@ -2472,37 +2528,37 @@
     // =========================================================
     const projectVideos = [
       {
-        title: "APEX GLOBAL CLEARING ENGINE",
-        badge: "FINTECH // 4K 60FPS",
-        desc: "Sub-millisecond high-frequency clearing engine with zero-knowledge cryptographic verification.",
+        title: "INSTANT PAYMENT & MOBILE BANKING APP",
+        badge: "FINTECH & PAYMENTS",
+        desc: "High-performance instant payment engine with real-time biometric verification and sub-second settlement.",
         timecode: "00:01:24:18",
         render: drawApexFintech
       },
       {
-        title: "SYNAPSE SOVEREIGN NEURAL CORE",
-        badge: "AI // 4K 60FPS",
-        desc: "Air-gapped 3D neural node cluster executing private autonomous reasoning with zero data leakage.",
+        title: "INTELLIGENT AI CUSTOMER ASSISTANT",
+        badge: "AI & AUTOMATION",
+        desc: "Private AI assistant answering complex customer questions 24/7 with zero data leakage.",
         timecode: "00:03:45:09",
         render: drawSynapseNeural
       },
       {
-        title: "HELIOS MULTI-REGION CLOUD FABRIC",
-        badge: "CLOUD // 4K 60FPS",
-        desc: "Planet-scale sovereign cloud fabric with active-active geo-routing across 14 enterprise regions.",
+        title: "HIGH-SCALE E-COMMERCE & CLOUD BACKBONE",
+        badge: "CLOUD & E-COMMERCE",
+        desc: "Fast and resilient cloud infrastructure designed for zero-downtime traffic spikes and 1-click checkout.",
         timecode: "00:07:12:33",
         render: drawHeliosCloud
       },
       {
-        title: "FORTRESS ZERO-TRUST DEFENSE",
-        badge: "SECURITY // 4K 60FPS",
-        desc: "Post-quantum cryptographic mesh with mutual TLS microsegmentation and automated threat mitigation.",
+        title: "HEALTHCARE PORTAL & DEFENSE SECURITY",
+        badge: "HEALTHCARE & SECURITY",
+        desc: "HIPAA-compliant security protecting sensitive patient records, medical history, and communications.",
         timecode: "00:11:08:21",
         render: drawFortressDefense
       },
       {
-        title: "TITAN CORE BANKING DE-MONOLITHING",
-        badge: "MODERNIZATION // 4K 60FPS",
-        desc: "Strangler-fig event stream architecture transforming monolithic mainframes into event-driven services.",
+        title: "ENTERPRISE SYSTEM MODERNIZATION",
+        badge: "MODERNIZATION",
+        desc: "Modern API architecture upgrading legacy business systems into responsive cloud applications.",
         timecode: "00:15:30:04",
         render: drawTitanEvents
       }
@@ -2758,7 +2814,7 @@
       ctx.font = '9px monospace';
       ctx.fillText('POST-QUANTUM CIPHER', 12, h - 14);
       ctx.fillStyle = '#FFFFFF';
-      ctx.fillText('LOCKED // PASS', w - 85, h - 14);
+      ctx.fillText('STATUS: SECURE', w - 85, h - 14);
     }
 
     // --- RENDERER 5: Titan Events (Particle Microservice Bus) ---
@@ -3207,7 +3263,7 @@
           ctx.stroke();
           ctx.fillStyle = '#DFBD67';
           ctx.font = '9px monospace';
-          ctx.fillText(`P99: 0.574ms // CONSENSUS: STABLE`, 12, h - 14);
+          ctx.fillText(`PAYMENT SPEED: < 1 SEC - 100% SUCCESS`, 12, h - 14);
         } else if (i === 1) {
           // Space 2: AI Neural Cluster
           const nodes = 10;
@@ -3243,7 +3299,7 @@
 
           ctx.fillStyle = '#DFBD67';
           ctx.font = '9px monospace';
-          ctx.fillText(`AIR-GAPPED // 140M VECTORS`, 12, h - 14);
+          ctx.fillText(`AI AGENT: ACTIVE - ZERO DATA LEAKS`, 12, h - 14);
         } else if (i === 2) {
           // Space 3: Cloud multi-region
           const regions = [
@@ -3276,7 +3332,7 @@
 
           ctx.fillStyle = '#22d3ee';
           ctx.font = '9px monospace';
-          ctx.fillText(`ACTIVE-ACTIVE // 42M RPS ROUTED`, 12, h - 14);
+          ctx.fillText(`STORE ENGINE: ONLINE - FAST CHECKOUT`, 12, h - 14);
         } else if (i === 3) {
           // Space 4: Post-Quantum lattice & shield
           const cx = w / 2;
@@ -3300,7 +3356,7 @@
 
           ctx.fillStyle = '#c084fc';
           ctx.font = '9px monospace';
-          ctx.fillText(`POST-QUANTUM KYBER-1024 // 0 BREACH`, 12, h - 14);
+          ctx.fillText(`PATIENT PORTAL: SECURE - ZERO BREACHES`, 12, h - 14);
         }
       }
 

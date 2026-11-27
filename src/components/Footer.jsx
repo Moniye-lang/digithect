@@ -31,7 +31,7 @@ export default function Footer({ onNavigate, onOpenConsultation }) {
         {/* Center Status Pill */}
         <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 border border-slate-800 text-[10px] font-mono text-slate-400">
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-          <span>ALL SYSTEMS OPERATIONAL // 99.999% SLA</span>
+          <span>ALL SYSTEMS OPERATIONAL - 24/7 SUPPORT</span>
         </div>
 
         {/* Quick Nav Links */}
@@ -39,10 +39,10 @@ export default function Footer({ onNavigate, onOpenConsultation }) {
           <button onClick={scrollToTop} className="hover:text-gold-300 transition-colors">Top ↑</button>
           <button onClick={(e) => handleLink('home', e)} className="hover:text-gold-300 transition-colors">Home</button>
           <button onClick={(e) => handleLink('services', e)} className="hover:text-gold-300 transition-colors">Services</button>
-          <button onClick={(e) => handleLink('projects', e)} className="hover:text-gold-300 transition-colors">Projects (4 Spaces)</button>
+          <button onClick={(e) => handleLink('projects', e)} className="hover:text-gold-300 transition-colors">Projects</button>
           <button onClick={(e) => handleLink('about', e)} className="hover:text-gold-300 transition-colors">About</button>
           <button onClick={(e) => handleLink('contact', e)} className="hover:text-gold-300 transition-colors">Contact</button>
-          <button onClick={onOpenConsultation} className="text-gold-400 hover:text-gold-300 transition-colors">Engage</button>
+          <button onClick={onOpenConsultation} className="text-gold-400 hover:text-gold-300 transition-colors">Contact Us</button>
         </div>
 
       </div>
